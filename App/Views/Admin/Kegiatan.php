@@ -36,11 +36,10 @@
                 <td><?= $i+1 ?></td>
                 <td><?= htmlspecialchars($k['nama_kegiatan']) ?></td>
                 <td><?= date('d-m-Y', strtotime($k['tanggal_kegiatan'])) ?></td>
-                <td>
-                  <a class="btn btn-sm btn-danger" 
-                     href="index.php?url=kegiatan/hapus/<?= $k['id'] ?>" 
-                     onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
-                </td>
+                <td><a class="btn btn-sm btn-danger" 
+                        href="Index.php?url=kegiatan/hapus" 
+                        onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
+
               </tr>
             <?php endforeach;?>
         <?php endif; ?>
