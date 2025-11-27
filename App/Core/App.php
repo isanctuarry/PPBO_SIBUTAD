@@ -11,32 +11,38 @@ class App {
     public function __construct() {
         $url = $this->parseURL();
 
-        // controller
-        if(file_exists('../app/controllers/' . ucfirst($url[0]) . 'Controller.php')) {
+        if(isset($url[0]) && file_exists('../App/Controllers/' . ucfirst($url[0]) . 'Controller.php')) {
             $this->controller = ucfirst($url[0]) . 'Controller';
             unset($url[0]);
         }
 
+        require_once '../App/Controllers/' . $this->controller . '.php';
         $this->controller = "App\\Controllers\\" . $this->controller;
         $this->controller = new $this->controller;
 
-        // method
-        if(isset($url[1]) && method_exists($this->controller, $url[1])) {
-            $this->method = $url[1];
-            unset($url[1]);
+        if(isset($url[1])) {
+            if(method_exists($this->controller, $url[1])) {
+                $this->method = $url[1];
+                unset($url[1]);
+            }
         }
 
-        // params
-        $this->params = $url ? array_values($url) : [];
+        // PARAMS
+        if(!empty($url)) {
+            $this->params = array_values($url);
+        }
 
-        // eksekusi
+        // EKSEKUSI
         call_user_func_array([$this->controller, $this->method], $this->params);
     }
 
     private function parseURL() {
         if(isset($_GET['url'])) {
-            $url = explode('/', rtrim($_GET['url'], '/'));
-            return filter_var_array($url, FILTER_SANITIZE_URL);
+            $url = rtrim($_GET['url'], '/');
+            $url = filter_var($url, FILTER_SANITIZE_URL);
+            $url = explode('/', $url);
+            return $url;
         }
+        return null; 
     }
 }

@@ -9,7 +9,7 @@ class Model {
     protected $table;
 
     public function __construct() {
-        $this->db = require __DIR__ . '/../../Config/Database';
+        $this->db = require __DIR__ . '/../../Config/Database.php';
     }
     // SELECT semua
     public function all() {

@@ -16,10 +16,10 @@ class AdminController extends Controller {
     public function login() {
         // jika sudah login redirect ke dashboard
         if(isset($_SESSION['admin'])) {
-            header("Location: /Dashboard");
+            header("Location: /Dashboard.php");
             exit;
         }
-        $this->view('Admin/Login', ['title' => 'Login Admin']);
+        $this->view('Admin/Login.php', ['title' => 'Login Admin']);
     }
 
     public function doLogin() {
@@ -33,7 +33,7 @@ class AdminController extends Controller {
             exit;
         } else {
             // bisa kirim pesan error, untuk sederhana:
-            $this->view('Admin/Login', ['title' => 'Login Admin', 'error' => 'Username atau password salah']);
+            $this->view('Admin/Login.php', ['title' => 'Login Admin', 'error' => 'Username atau password salah']);
         }
     }
 

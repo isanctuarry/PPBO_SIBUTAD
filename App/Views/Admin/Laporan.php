@@ -1,4 +1,4 @@
-<?php require __DIR__ . '/../Layout/Header'; ?>
+<?php require __DIR__ . '/../Layout/Header.php'; ?>
 <h4>Rekap Tamu per Kegiatan</h4>
 <table class="table table-hover">
   <thead><tr><th>#</th><th>Nama Kegiatan</th><th>Total Tamu</th></tr></thead>
@@ -12,4 +12,4 @@
     <?php endforeach; ?>
   </tbody>
 </table>
-<?php require __DIR__ . '/../Layout/Footer'; ?>
+<?php require __DIR__ . '/../Layout/Footer.php'; ?>

@@ -1,4 +1,4 @@
-<?php require __DIR__ . '/../Layout/Header'; ?>
+<?php require __DIR__ . '/../Layout/Header.php'; ?>
 <h4>Manajemen Kegiatan</h4>
 
 <div class="row">
@@ -41,4 +41,4 @@
   </div>
 </div>
 
-<?php require __DIR__ . '/../Layout/Footer'; ?>
+<?php require __DIR__ . '/../Layout/Footer.php'; ?>

@@ -1,4 +1,4 @@
-<?php require __DIR__ . '/../Layout/Header'; ?>
+<?php require __DIR__ . '/../Layout/Header.php'; ?>
 <h4>Daftar Tamu</h4>
 <table class="table table-striped">
   <thead>
@@ -17,4 +17,4 @@
     <?php endforeach; ?>
   </tbody>
 </table>
-<?php require __DIR__ . '/../Layout/Footer'; ?>
+<?php require __DIR__ . '/../Layout/Footer.php'; ?>
