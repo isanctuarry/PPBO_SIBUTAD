@@ -6,16 +6,19 @@ use App\Core\Model;
 
 class ViewData extends Model {
 
-    public function getRekapTamuPerKegiatan() {
-        $stmt = $this->db->prepare("
-            SELECT k.judul, COUNT(t.id) AS total_tamu
-            FROM kegiatan k
-            LEFT JOIN tamu t ON k.id = t.id_kegiatan
-            GROUP BY k.id
-        ");
-        $stmt->execute();
-        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
-    }
+   public function getRekapTamuPerKegiatan() {
+    $stmt = $this->db->prepare("
+        SELECT 
+            k.nama_kegiatan, 
+            COUNT(t.id_tamu) AS total_tamu
+        FROM kegiatan k
+        LEFT JOIN tamu t 
+            ON k.id = t.id_kegiatan  -- PERBAIKAN DISINI
+        GROUP BY k.id, k.nama_kegiatan
+    ");
+    $stmt->execute();
+    return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+}
 
     public function getStatistik() {
         $data = [];

@@ -26,6 +26,7 @@ class Kegiatan extends Model {
         $stmt = $this->db->prepare("DELETE FROM kegiatan WHERE id = ?");
         return $stmt->execute([$id]);
     }
+    
 
     // Fungsi Ambil Semua Data
     public function getSemuaKegiatan() {
