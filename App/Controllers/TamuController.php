@@ -14,8 +14,17 @@ class TamuController extends Controller {
 
     // Halaman form tamu (public)
     public function index() {
-        $this->view('Tamu/Form-Input', ['title' => 'Buku Tamu']);
-    }
+    // panggil model kegiatan
+    $kegiatanModel = new \App\Models\Kegiatan();
+    $list = $kegiatanModel->getSemuaKegiatan();
+
+    // kirim list kegiatan ke view
+    $this->view('Tamu/Form-Input', [
+        'title'     => 'Buku Tamu',
+        'kegiatan'  => $list
+    ]);
+}
+
 
     // Proses simpan tamu
     public function simpan() {

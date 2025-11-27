@@ -23,10 +23,10 @@ class Kegiatan extends Model {
     }
 
     public function hapusKegiatan($id) {
-        $stmt = $this->db->prepare("DELETE FROM kegiatan WHERE id = ?");
-        return $stmt->execute([$id]);
+    $stmt = $this->db->prepare("DELETE FROM kegiatan WHERE id_kegiatan = ?");
+    return $stmt->execute([$id]);
     }
-    
+
 
     // Fungsi Ambil Semua Data
     public function getSemuaKegiatan() {

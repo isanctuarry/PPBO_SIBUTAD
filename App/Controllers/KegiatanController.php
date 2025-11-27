@@ -27,9 +27,9 @@ class KegiatanController extends Controller {
 
     public function simpan() {
         $data = [
-            'nama_kegiatan' => $_POST['nama_kegiatan'] ?? '', 
-            'tanggal_kegiatan'       => $_POST['tanggal_kegiatan'] ?? '',       
-            'lokasi'        => $_POST['lokasi'] ?? ''
+            'nama_kegiatan'    => $_POST['nama_kegiatan'] ?? '', 
+            'tanggal_kegiatan' => $_POST['tanggal_kegiatan'] ?? '',       
+            'lokasi'           => $_POST['lokasi'] ?? ''
         ];
 
         $this->kegiatanModel->tambahKegiatan($data);

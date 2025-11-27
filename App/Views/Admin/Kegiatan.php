@@ -37,7 +37,7 @@
                 <td><?= htmlspecialchars($k['nama_kegiatan']) ?></td>
                 <td><?= date('d-m-Y', strtotime($k['tanggal_kegiatan'])) ?></td>
                 <td><a class="btn btn-sm btn-danger" 
-                        href="Index.php?url=kegiatan/hapus" 
+                        href="index.php?url=kegiatan/hapus/<?= $k['id_kegiatan'] ?>" 
                         onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
 
               </tr>

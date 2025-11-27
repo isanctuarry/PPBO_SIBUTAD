@@ -6,7 +6,7 @@
     <?php foreach($rekap as $i => $r): ?>
       <tr>
         <td><?= $i+1 ?></td>
-        <td><?= htmlspecialchars($r['judul']) ?></td>
+        <td><?= htmlspecialchars($r['nama_kegiatan']) ?></td>
         <td><?= htmlspecialchars($r['total_tamu']) ?></td>
       </tr>
     <?php endforeach; ?>

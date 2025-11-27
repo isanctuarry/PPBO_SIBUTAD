@@ -1,8 +1,5 @@
 <?php require __DIR__ . '/../Layout/Header.php'; ?>
 <h4>Daftar Tamu</h4>
-<pre>
-<?php var_dump($tamu); ?>
-</pre>
 <table class="table table-striped">
   <thead>
     <tr>

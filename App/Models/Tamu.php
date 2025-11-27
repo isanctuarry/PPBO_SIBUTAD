@@ -25,8 +25,9 @@ class Tamu extends Model {
     }
 
     public function getSemuaTamu() {
-        $stmt = $this->db->prepare("SELECT * FROM kegiatan ORDER BY tanggal_kegiatan DESC");
-        $stmt->execute();
-        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    $stmt = $this->db->prepare("SELECT * FROM tamu ORDER BY tanggal_kunjungan DESC");
+    $stmt->execute();
+    return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
+
 }
