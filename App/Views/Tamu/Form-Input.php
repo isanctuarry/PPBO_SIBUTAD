@@ -30,13 +30,14 @@
             <!-- PENTING: Atribut 'required' ditambahkan di sini -->
             <!-- Ini mencegah browser mengirim form jika user belum memilih kegiatan -->
             <select name="id_kegiatan" class="form-select" required>
-            <option value="">— Pilih Kegiatan —</option>
-              <?php foreach ($kegiatan as $k): ?>
-                <option value="<?= $k['nama_kegiatan'] ?>">
-                  <?= htmlspecialchars($k['nama_kegiatan']) ?>
-                </option>
-              <?php endforeach; ?>
+              <option value="">— Pilih Kegiatan —</option>
+                <?php foreach ($kegiatan as $k): ?>
+                  <option value="<?= $k['id_kegiatan'] ?>">
+                    <?= htmlspecialchars($k['nama_kegiatan']) ?>
+                  </option>
+                <?php endforeach; ?>
             </select>
+
             <div class="form-text text-muted">Wajib memilih salah satu kegiatan.</div>
           </div>
 
