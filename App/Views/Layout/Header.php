@@ -13,11 +13,10 @@
     
     <?php if(isset($_SESSION['admin'])): ?>
       <div class="ms-auto">
-        <!-- PERBAIKAN 1: Link Dashboard diarahkan ke Controller -->
+
         <a class="btn btn-outline-light btn-sm" href="index.php?url=admin/dashboard">Dashboard</a>
         
-        <!-- PERBAIKAN 2: Link Logout diarahkan ke Controller -->
-        <!-- Ini yang membuat sesi dihapus dan keluar mode admin -->
+  
         <a class="btn btn-light btn-sm" href="index.php?url=admin/logout">Logout</a>
       </div>
     <?php endif;?>
