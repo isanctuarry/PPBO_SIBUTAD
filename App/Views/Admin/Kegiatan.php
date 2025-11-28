@@ -1,4 +1,5 @@
 <?php require __DIR__ . '/../Layout/Header.php'; ?>
+
 <h4>Manajemen Kegiatan</h4>
 
 <div class="row">
@@ -26,26 +27,43 @@
   <!-- TABEL DATA -->
   <div class="col-md-6">
     <table class="table table-bordered">
-      <thead><tr><th>#</th><th>Nama</th><th>Tanggal Kegiatan</th><th>Aksi</th></tr></thead>
-      <tbody>
-        <?php if(empty($kegiatan)): ?>
-            <tr><td colspan="4" class="text-center">Belum ada data.</td></tr>
-        <?php else: ?>
-            <?php foreach($kegiatan as $i => $k): ?>
-              <tr>
-                <td><?= $i+1 ?></td>
-                <td><?= htmlspecialchars($k['nama_kegiatan']) ?></td>
-                <td><?= date('d-m-Y', strtotime($k['tanggal_kegiatan'])) ?></td>
-                <td><a class="btn btn-sm btn-danger" 
-                        href="index.php?url=kegiatan/hapus/<?= $k['id_kegiatan'] ?>" 
-                        onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nama</th>
+      <th>Lokasi</th>
+      <th>Tanggal</th>
+      <th style="width: 140px;">Aksi</th>
+    </tr>
+  </thead>
 
-              </tr>
-            <?php endforeach;?>
-        <?php endif; ?>
-      </tbody>
-    </table>
-  </div>
-</div>
+  <tbody>
+    <?php if(empty($kegiatan)): ?>
+        <tr><td colspan="5" class="text-center">Belum ada data.</td></tr>
+    <?php else: ?>
+        <?php foreach($kegiatan as $i => $k): ?>
+          <tr>
+            <td><?= $i+1 ?></td>
+            <td><?= htmlspecialchars($k['nama_kegiatan']) ?></td>
+            <td><?= htmlspecialchars($k['lokasi'] ?? '-') ?></td>
+            <td><?= date('d-m-Y', strtotime($k['tanggal_kegiatan'])) ?></td>
+            <td>
+                <a class="btn btn-sm btn-primary"
+                   href="index.php?url=kegiatan/edit/<?= $k['id_kegiatan'] ?>">
+                   Edit
+                </a>
+
+                <a class="btn btn-sm btn-danger" 
+                   href="index.php?url=kegiatan/hapus/<?= $k['id_kegiatan'] ?>" 
+                   onclick="return confirm('Yakin ingin menghapus?')">
+                   Hapus
+                </a>
+            </td>
+          </tr>
+        <?php endforeach;?>
+    <?php endif; ?>
+  </tbody>
+</table>
+
 
 <?php require __DIR__ . '/../Layout/Footer.php'; ?>

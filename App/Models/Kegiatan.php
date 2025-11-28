@@ -22,15 +22,38 @@ class Kegiatan extends Model {
     }
 
     public function hapusKegiatan($id) {
-    $stmt = $this->db->prepare("DELETE FROM kegiatan WHERE id_kegiatan = ?");
-    return $stmt->execute([$id]);
+        $stmt = $this->db->prepare("DELETE FROM kegiatan WHERE id_kegiatan = ?");
+        return $stmt->execute([$id]);
     }
 
-
-    // Fungsi Ambil Semua Data
     public function getSemuaKegiatan() {
         $stmt = $this->db->prepare("SELECT * FROM kegiatan ORDER BY tanggal_kegiatan DESC");
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function getKegiatanById($id) {
+        $stmt = $this->db->prepare("SELECT * FROM kegiatan WHERE id_kegiatan = ?");
+        $stmt->execute([$id]);
+        return $stmt->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function updateKegiatan($id, $data) {
+        $sql = "
+            UPDATE kegiatan SET 
+                nama_kegiatan = ?, 
+                tanggal_kegiatan = ?, 
+                lokasi = ?
+            WHERE id_kegiatan = ?
+        ";
+
+        $stmt = $this->db->prepare($sql);
+
+        return $stmt->execute([
+        $data['nama_kegiatan'],
+        $data['tanggal_kegiatan'],
+        $data['lokasi'],
+        $id
+    ]);
     }
 }

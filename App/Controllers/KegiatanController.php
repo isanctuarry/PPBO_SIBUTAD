@@ -10,17 +10,15 @@ class KegiatanController extends Controller {
     protected $kegiatanModel;
 
     public function __construct() {
-
         Auth::checkLogin();
         $this->kegiatanModel = new Kegiatan();
     }
 
     public function index() {
-        // Ambil data dari model
         $keg = $this->kegiatanModel->getSemuaKegiatan();
-        
+
         $this->view('Admin/Kegiatan', [
-            'title' => 'Manajemen Kegiatan', 
+            'title' => 'Manajemen Kegiatan',
             'kegiatan' => $keg
         ]);
     }
@@ -34,7 +32,7 @@ class KegiatanController extends Controller {
 
         $this->kegiatanModel->tambahKegiatan($data);
 
-        header("Location: index.php?url=kegiatan/index");
+        header("Location: /kegiatan");
         exit;
     }
 
@@ -42,8 +40,48 @@ class KegiatanController extends Controller {
         if($id) {
             $this->kegiatanModel->hapusKegiatan($id);
         }
-        
-        header("Location: index.php?url=kegiatan/index");
+
+        header("Location: /kegiatan");
         exit;
+    }
+
+    public function edit($id) {
+        $data['title'] = "Edit Kegiatan";
+        $data['mode'] = "edit";
+        $data['kegiatan'] = $this->kegiatanModel->getKegiatanById($id);
+
+        if(!$data['kegiatan']) {
+            echo "Data kegiatan tidak ditemukan.";
+            exit;
+        }
+
+        $this->view('Admin/Form-Kegiatan', $data);
+    }
+
+    public function update() {   // ← FIXED!!
+        if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+            header("Location: /kegiatan");
+            exit;
+        }
+
+        $id = $_POST["id_kegiatan"] ?? null;
+
+        if (!$id) {
+            echo "ID kegiatan tidak ditemukan. Form edit rusak.";
+            exit;
+        }
+
+        $data = [
+            "nama_kegiatan" => $_POST["nama_kegiatan"] ?? '',
+            "tanggal_kegiatan" => $_POST["tanggal_kegiatan"] ?? '',
+            "lokasi" => $_POST["lokasi"] ?? ''
+        ];
+
+        if ($this->kegiatanModel->updateKegiatan($id, $data)) {
+            header("Location: /kegiatan");
+            exit;
+        } else {
+            echo "Gagal update";
+        }
     }
 }

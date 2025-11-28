@@ -79,4 +79,5 @@ class TamuController extends Controller {
         $tamu = $this->tamuModel->getSemuaTamu();
         $this->view('Admin/DaftarTamu', ['title' => 'Daftar Tamu', 'tamu' => $tamu]);
     }
+
 }
