@@ -20,5 +20,10 @@
             "App/Helpers/Helpers.php",
             "App/Helpers/Validation.php"
         ]
+    },
+    "script": {
+        "vercel": [
+            "@composer install --no-dev --no-interaction --prefer-dist"
+        ]
     }
 }
