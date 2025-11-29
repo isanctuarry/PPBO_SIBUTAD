@@ -10,8 +10,12 @@
 - H1101241047 Khairunnisa 
 - H1101241065 Shalwa Nafiisa Yusri
 
-# Cara Pakai
+## Cara Pakai di Local
 - run `composer install`
 - buat file `.env` (isi sesuai konfigurasi database (MYSQL atau PGSQL)), salin dari isi `.env.example`.
 - Run server Database, run Query (`db.sql` untuk database MYSQL)
-- Run server `php -S localhost:8080`
+- Run server `php -S localhost:8080 -t public`
+
+## Cara deploy ke vercel
+- run `vercel --prod` (bisa koneksi ke repo github untuk auto run)
+- setup database: jika pakai `supabase`, run `db-pg.sql` di **SQL Editor** supabase, sesuaikan konfigurasi `DB_*` seperti pada contoh di `.env.prod.example`, dan paste-kan ke dalam **vercel environment variable**

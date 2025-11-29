@@ -7,7 +7,7 @@
         <?php if(!empty($error)): ?>
           <div class="alert alert-danger"><?= $error ?></div>
         <?php endif;?>
-        <form method="post" action="/admin/dologin">
+        <form method="post" action="<?= $base_url ?>/index.php?url=admin/dologin">
           <div class="mb-3">
             <label class="form-label">Username</label>
             <input name="username" class="form-control" required>

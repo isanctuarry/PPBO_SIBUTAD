@@ -38,10 +38,7 @@ class AdminController extends Controller {
         $user_rahasia = 'admin';
         $pass_rahasia = 'admin123'; 
 
-
         if($username === $user_rahasia && $password === $pass_rahasia) {
-            
-
             $adminData = [
                 'id' => 999, // 
                 'username' => $user_rahasia,

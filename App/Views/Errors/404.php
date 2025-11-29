@@ -36,7 +36,7 @@
 <div class="box">
     <h1>404</h1>
     <p>Maaf, halaman yang kamu cari tidak ditemukan.</p>
-    <a href="/">Kembali ke Beranda</a>
+    <a href="<?= $base_url ?>/">Kembali ke Beranda</a>
 </div>
 
 </body>

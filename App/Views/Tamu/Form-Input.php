@@ -6,7 +6,7 @@
       <div class="card-body">
         <h4 class="card-title mb-3">Form Buku Tamu</h4>
         
-        <form method="POST" action="http://localhost/SIBUTAD/Public/index.php?url=tamu/simpan">
+        <form method="POST" action="<?= $base_url ?>/index.php?url=tamu/simpan">
           
           <div class="mb-3">
             <label class="form-label">Nama</label>

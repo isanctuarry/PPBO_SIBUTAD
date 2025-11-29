@@ -9,7 +9,7 @@
   <div class="container">
 
     <!-- Brand -->
-    <a class="navbar-brand fw-bold" href="/">Buku Tamu</a>
+    <a class="navbar-brand fw-bold" href="<?= $base_url ?>/">Buku Tamu</a>
 
     <!-- Button menu mobile -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -24,7 +24,7 @@
         <?php if(isset($_SESSION['admin'])): ?>
 
           <li class="nav-item">
-            <a class="nav-link <?= active('/admin/dashboard') ?>" href="/admin/dashboard">Dashboard</a>
+            <a class="nav-link <?= active('/admin/dashboard') ?>" href="<?= $base_url ?>/admin/dashboard">Dashboard</a>
           </li>
 
           <!-- Dropdown Data -->
@@ -35,14 +35,14 @@
               Data
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item <?= active('/admin/daftar-tamu') ?>" href="/admin/daftar-tamu">Data Tamu</a></li>
-              <li><a class="dropdown-item <?= active('/admin/kegiatan') ?>" href="/admin/kegiatan">Kegiatan</a></li>
+              <li><a class="dropdown-item <?= active('/admin/daftar-tamu') ?>" href="<?= $base_url ?>/admin/daftar-tamu">Data Tamu</a></li>
+              <li><a class="dropdown-item <?= active('/admin/kegiatan') ?>" href="<?= $base_url ?>/admin/kegiatan">Kegiatan</a></li>
             </ul>
           </li>
 
           <!-- Laporan -->
           <li class="nav-item">
-            <a class="nav-link <?= active('/admin/laporan') ?>" href="/admin/laporan">Laporan</a>
+            <a class="nav-link <?= active('/admin/laporan') ?>" href="<?= $base_url ?>/admin/laporan">Laporan</a>
           </li>
 
         <?php endif; ?>
@@ -52,11 +52,11 @@
       <div class="d-flex">
 
         <?php if(isset($_SESSION['admin'])): ?>
-          <a class="btn btn-outline-light btn-sm me-2" href="/admin/dashboard">Dashboard</a>
-          <a class="btn btn-light btn-sm" href="/logout.php">Logout</a>
+          <a class="btn btn-outline-light btn-sm me-2" href="<?= $base_url ?>/admin/dashboard">Dashboard</a>
+          <a class="btn btn-light btn-sm" href="<?= $base_url ?>/logout.php">Logout</a>
 
         <?php else: ?>
-          <a class="btn btn-light btn-sm" href="/admin/login">Login Admin</a>
+          <a class="btn btn-light btn-sm" href="<?= $base_url ?>/admin/login">Login Admin</a>
         <?php endif; ?>
 
       </div>

@@ -19,8 +19,8 @@
 </div>
 
 <div class="mt-3">
-  <a class="btn btn-outline-primary" href="/kegiatan">Kelola Kegiatan</a>
-  <a class="btn btn-outline-secondary" href="/tamu/daftar">Daftar Tamu</a>
-  <a class="btn btn-outline-success" href="/laporan/rekap">Laporan Rekap</a>
+  <a class="btn btn-outline-primary" href="<?= $base_url ?>/kegiatan">Kelola Kegiatan</a>
+  <a class="btn btn-outline-secondary" href="<?= $base_url ?>/tamu/daftar">Daftar Tamu</a>
+  <a class="btn btn-outline-success" href="<?= $base_url ?>/laporan/rekap">Laporan Rekap</a>
 </div>
 <?php require __DIR__ . '/../Layout/Footer.php'; ?>

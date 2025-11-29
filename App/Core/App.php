@@ -10,13 +10,14 @@ class App {
 
     public function __construct() {
         $url = $this->parseURL();
+        // die(var_dump($url));
 
-        if(isset($url[0]) && file_exists('../App/Controllers/' . ucfirst($url[0]) . 'Controller.php')) {
+        if(isset($url[0]) && file_exists(__DIR__ . '/../Controllers/' . ucfirst($url[0]) . 'Controller.php')) {
             $this->controller = ucfirst($url[0]) . 'Controller';
             unset($url[0]);
         }
 
-        require_once '../App/Controllers/' . $this->controller . '.php';
+        require_once __DIR__ . '/../Controllers/' . $this->controller . '.php';
         $this->controller = "App\\Controllers\\" . $this->controller;
         $this->controller = new $this->controller;
 
