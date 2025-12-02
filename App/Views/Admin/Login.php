@@ -1,18 +1,14 @@
 <?php require __DIR__ . '/../Layout/Header.php'; ?>
-
-<!-- Load CSS tampilan login -->
 <link rel="stylesheet" href="<?= $base_url ?>/assets/css/login-style.css">
 
 <div class="login-wrapper">
 
-  <!-- Bagian kiri (gambar + welcome) -->
   <div class="left-art">
     <h1>WELCOME</h1>
   </div>
 
   <!-- Bagian kanan (form login) -->
   <div class="right-login">
-    <h4>Login Admin</h4>
 
     <?php if(!empty($error)): ?>
       <div class="alert alert-danger"><?= $error ?></div>
