@@ -58,7 +58,7 @@
         <div class="card card-hover shadow-lg">
             <a href="index.php?url=laporan/rekap" class="card-body p-4 text-decoration-none text-center">
                 <i class="fas fa-chart-bar fa-3x mb-3 text-dark-sibutad"></i>
-                <h5 class="card-title text-dark-sibutad font-weight-bold">Total Tamu</h5>
+                <h5 class="card-title text-dark-sibutad font-weight-bold">Total Kegiatan</h5>
                 <h1 class="display-4 font-weight-bold"><?= $stat['total_kegiatan'] ?? 0 ?></h1>
             </a>
         </div>
