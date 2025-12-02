@@ -96,7 +96,6 @@ class AdminController extends Controller {
 
     public function logout() {
         Auth::logout();
-        // Redirect menggunakan $this->base_url
         header("Location: " . $this->base_url . "/index.php?url=admin/login");
         exit;
     }

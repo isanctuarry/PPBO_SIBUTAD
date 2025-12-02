@@ -17,6 +17,5 @@ class Auth {
 
     public static function logout() {
         unset($_SESSION['admin']);
-        session_destroy();
     }
 }
