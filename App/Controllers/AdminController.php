@@ -76,4 +76,6 @@ class AdminController extends Controller {
 
         $this->view('Admin/Dashboard', ['title' => 'Dashboard', 'stat' => $stat]);
     }
+
+    
 }
