@@ -9,28 +9,63 @@ use App\Models\ViewData;
 class AdminController extends Controller {
 
     protected $adminModel;
+    protected $base_url; // Variabel untuk menyimpan URL dasar
 
     public function __construct() {
+        // 1. Inisialisasi Model
         $this->adminModel = new Admin();
+        
+        // 2. Tentukan Base URL secara dinamis (penting untuk Vercel & Laragon)
+        $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+        // Menggunakan operator null coalescing (??) untuk lingkungan Vercel/CLI
+        $host = $_SERVER['HTTP_HOST'] ?? 'localhost'; 
+        $this->base_url = $protocol . "://" . $host;
+        
+        // 3. Pengecekan Sesi: Panggil HANYA jika bukan halaman Login atau DoLogin
+        $url = $_GET['url'] ?? '';
+        
+        // Jika URL yang diakses adalah halaman yang dilindungi (bukan login/logout/doLogin), cek sesi.
+        if (!in_array($url, ['admin/login', 'admin/dologin', 'admin/logout'])) {
+            $this->checkAdminSession();
+        }
+    }
+
+    /**
+     * Method Pembantu: Memeriksa Sesi Admin dan melakukan Redirect jika gagal.
+     */
+    protected function checkAdminSession() {
+        // Pastikan session sudah dimulai (meskipun idealnya di index.php)
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        
+        // Cek apakah data sesi admin tidak ada
+        if (!isset($_SESSION['admin'])) { 
+            
+            // Set notifikasi flash message 
+            $_SESSION['flash_message'] = 'Sesi Anda telah berakhir. Silakan login kembali.';
+            
+            // Redirect ke halaman login menggunakan $this->base_url yang aman
+            header('Location: ' . $this->base_url . '/index.php?url=admin/login');
+            exit;
+        }
     }
 
     public function index() {
-        if(isset($_SESSION['admin'])) {
-            $this->dashboard(); 
-        } else {
-            $this->login();
-        }
+        // Karena pengecekan sesi sudah dilakukan di __construct(), kita langsung ke dashboard.
+        $this->dashboard();
     }
 
     public function login() {
+        // Jika user sudah login, langsung alihkan ke dashboard
         if(isset($_SESSION['admin'])) {
-            $this->dashboard();
+            header("Location: " . $this->base_url . "/index.php?url=admin/dashboard");
             exit;
         }
+        // Tampilkan halaman login
         $this->view('Admin/Login', ['title' => 'Login Admin']);
     }
 
-    // --- BAGIAN INI YANG DIUBAH UNTUK BYPASS DATABASE ---
     public function doLogin() {
         $username = $_POST['username'] ?? '';
         $password = $_POST['password'] ?? '';
@@ -40,14 +75,14 @@ class AdminController extends Controller {
 
         if($username === $user_rahasia && $password === $pass_rahasia) {
             $adminData = [
-                'id' => 999, // 
+                'id' => 999,
                 'username' => $user_rahasia,
                 'nama' => 'Administrator'
             ];
 
             // Login Sukses
             Auth::login($adminData);
-            header("Location: index.php?url=admin/dashboard");
+            header("Location: " . $this->base_url . "/index.php?url=admin/dashboard");
             exit;
 
         } else {
@@ -61,12 +96,16 @@ class AdminController extends Controller {
 
     public function logout() {
         Auth::logout();
-        header("Location: index.php?url=admin/login");
+        // Redirect menggunakan $this->base_url
+        header("Location: " . $this->base_url . "/index.php?url=admin/login");
         exit;
     }
 
+    /**
+     * Halaman Dashboard Admin (index.php?url=admin/dashboard)
+     */
     public function dashboard() {
-        Auth::checkLogin(); 
+        // Pengecekan sesi sudah dihandle oleh __construct()
         
         $stat = []; 
         if(class_exists('\App\Models\ViewData')) {
@@ -76,6 +115,13 @@ class AdminController extends Controller {
 
         $this->view('Admin/Dashboard', ['title' => 'Dashboard', 'stat' => $stat]);
     }
-
     
+    // --- Anda bisa menambahkan fungsi lain seperti kelolaKegiatan() di sini ---
+    /*
+    public function kelolaKegiatan() {
+        // Otomatis dicek sesinya di __construct
+        // ... Logika pemuatan data ...
+        $this->view('Admin/KelolaKegiatan', ['title' => 'Kelola Kegiatan']);
+    }
+    */
 }
