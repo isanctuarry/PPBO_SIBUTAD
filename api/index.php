@@ -1,14 +1,10 @@
-<?php
-// THIS FILE ONLY FOR REST API — NO ROUTER MVC, NO SESSION
+<?php  
+// Force working directory to project root
+chdir(__DIR__ . '/..'); 
 
-header("Content-Type: application/json");
+require_once __DIR__ . '/../vendor/autoload.php';
 
-// Cek route API
-$path = $_GET['path'] ?? '';
+use App\Core\App;
 
-if ($path === 'getData') {
-    echo json_encode(['status' => 'ok']);
-    exit;
-}
-
-echo json_encode(['error' => 'Unknown API route']);
+// Jalankan App MVC
+$app = new App();
