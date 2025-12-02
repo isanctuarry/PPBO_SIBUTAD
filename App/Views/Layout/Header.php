@@ -16,6 +16,23 @@ if (strpos($host, 'localhost') !== false) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
+<?php
+// Tentukan apakah halaman ini adalah halaman publik (yang tidak perlu tombol back)
+$current_url = $_GET['url'] ?? 'home';
+$is_public_page = in_array($current_url, ['tamu', 'tamu/index', 'admin/login', 'admin/dologin']);
+
+// Tampilkan tombol hanya jika bukan halaman publik utama
+if (!$is_public_page && strpos($current_url, 'admin') !== false):
+?>
+<div style="margin-bottom: 20px;">
+    <button onclick="history.back()" class="btn btn-sm btn-outline-secondary" title="Kembali ke halaman sebelumnya">
+        <i class="fas fa-arrow-left"></i> Kembali
+    </button>
+</div>
+<?php 
+endif; 
+?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
     <a class="navbar-brand" href="<?= $base_url ?>/index.php">SIBUTAD</a>

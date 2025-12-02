@@ -19,13 +19,6 @@
 </div>
 
 <div class="mt-3">
-  <div class="quick-nav-admin">
-    <a href="<?= $base_url ?>/index.php?url=admin/dashboard" class="btn btn-sm btn-outline-secondary" title="Kembali ke Dashboard">
-        <i class="fas fa-arrow-left"></i> Kembali ke Dashboard
-    </a>
-</div>
-<hr>
-<h2>Kelola Kegiatan</h2>
   <a class="btn btn-outline-primary" href="<?= $base_url ?>/index.php?url=kegiatan">Kelola Kegiatan</a>
   <a class="btn btn-outline-secondary" href="<?= $base_url ?>/index.php?url=tamu/daftar">Daftar Tamu</a>
   <a class="btn btn-outline-success" href="index.php?url=laporan/rekap">Laporan Rekap</a>
