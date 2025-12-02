@@ -1,6 +1,6 @@
 body {
     font-family: 'Inter', sans-serif;
-    background: #f5f6fa;
+    background: #f5f6fa; 
     margin: 0;
     padding: 0;
 }
@@ -15,6 +15,7 @@ body {
 }
 
 /* Form */
+
 input, select, textarea {
     width: 100%;
     padding: 10px;
@@ -24,38 +25,32 @@ input, select, textarea {
 }
 
 button {
-    background: #0055ff;
+    background: #2d3250;
     color: white;
     padding: 10px 15px;
     border-radius: 8px;
     border: none;
     cursor: pointer;
 }
-
-button:hover {
+tton:hover {
     opacity: 0.9;
 }
-
 /* Table */
 table {
     width: 100%;
     border-collapse: collapse;
 }
-
 table thead {
-    background: #0055ff;
+    background: #2d3250;
     color: white;
 }
-
 table th, table td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
 }
-
 .alert {
     padding: 12px;
-    background: #ffe5e5;
     border-radius: 6px;
-    color: #a30000;
+    color: #f11010; 
     margin-bottom: 15px;
 }
