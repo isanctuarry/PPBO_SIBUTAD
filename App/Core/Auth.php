@@ -6,7 +6,7 @@ class Auth {
 
     public static function checkLogin() {
         if(!isset($_SESSION['admin'])) {
-            header("Location: /Login.php");
+            header("Location: /index.php?url=admin/login");
             exit;
         }
     }
