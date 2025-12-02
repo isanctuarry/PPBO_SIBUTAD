@@ -1,6 +1,6 @@
 <?php require __DIR__ . '/../Layout/Header.php'; ?>
 
-<h3 class="mb-4">Dashboard Admin</h3>
+<h3 class="mb-4">Dashboard</h3>
 
 <!-- ======================================================= -->
 <!-- BAGIAN 1: 3 SECTION UTAMA (Akses Cepat/Navigasi) -->
@@ -45,7 +45,7 @@
     <div class="col-md-6 mb-3">
         <div class="card text-center text-white bg-dark-sibutad shadow-lg">
             <div class="card-body p-4">
-                <h6 class="text-uppercase text-light mb-1">Total Tamu</h6>
+                <h5 class="card-title text-dark-sibutad font-weight-bold">Total Tamu</h5>
                 <h1 class="display-4 font-weight-bold"><?= $stat['total_tamu'] ?? 0 ?></h1>
             </div>
         </div>
@@ -55,7 +55,7 @@
     <div class="col-md-6 mb-3">
         <div class="card text-center text-white bg-dark-sibutad shadow-lg">
             <div class="card-body p-4">
-                <h6 class="text-uppercase text-light mb-1">Total Kegiatan</h6>
+                <h5 class="card-title text-dark-sibutad font-weight-bold">Total Kegiatan</h5>
                 <h1 class="display-4 font-weight-bold"><?= $stat['total_kegiatan'] ?? 0 ?></h1>
             </div>
         </div>
