@@ -25,7 +25,7 @@ input, select, textarea {
 }
 
 button {
-    background: #2d3250;
+    background: #2d3250 !important;
     color: white;
     padding: 10px 15px;
     border-radius: 8px;
@@ -41,16 +41,16 @@ table {
     border-collapse: collapse;
 }
 table thead {
-    background: #2d3250;
-    color: white;
+    background: #2d3250 !important;
+    color: white !important;
 }
 table th, table td {
     padding: 12px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ddd !important;
 }
 .alert {
     padding: 12px;
     border-radius: 6px;
-    color: #f11010; 
+    color: #f11010 !important; 
     margin-bottom: 15px;
 }
