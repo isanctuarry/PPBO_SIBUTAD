@@ -24,9 +24,9 @@ class AdminController extends Controller {
         // 3. Pengecekan Sesi: Panggil HANYA jika bukan halaman Login atau DoLogin
         $url = $_GET['url'] ?? '';
         
-        // Jika URL yang diakses adalah halaman yang dilindungi (bukan login/logout/doLogin), cek sesi.
-        if (!in_array($url, ['admin/login', 'admin/dologin', 'admin/logout'])) {
-            $this->checkAdminSession();
+
+       if (!preg_match('/^admin\/(login|dologin|logout)$/', $url)) {
+    $this->checkAdminSession();
         }
     }
 
@@ -34,7 +34,7 @@ class AdminController extends Controller {
      * Method Pembantu: Memeriksa Sesi Admin dan melakukan Redirect jika gagal.
      */
     protected function checkAdminSession() {
-
+        session_start();
         // Cek apakah data sesi admin tidak ada
         if (!isset($_SESSION['admin'])) { 
             
