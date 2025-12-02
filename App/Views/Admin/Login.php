@@ -5,8 +5,6 @@
     <div class="left-art">
         <h1>WELCOME</h1>
     </div>
-
-    <?php if (session_status() === PHP_SESSION_NONE) { session_start(); } ?>
     
     <div class="right-login">
 

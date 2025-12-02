@@ -34,11 +34,7 @@ class AdminController extends Controller {
      * Method Pembantu: Memeriksa Sesi Admin dan melakukan Redirect jika gagal.
      */
     protected function checkAdminSession() {
-        // Pastikan session sudah dimulai (meskipun idealnya di index.php)
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
-        
+
         // Cek apakah data sesi admin tidak ada
         if (!isset($_SESSION['admin'])) { 
             
