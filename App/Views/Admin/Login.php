@@ -6,6 +6,29 @@
     <h1>WELCOME</h1>
   </div>
 
+  <?php
+// Pastikan sesi dimulai di sini juga, jika tidak dimulai di header atau footer
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// 1. Logika Menampilkan Pesan Error Login
+if (isset($error)): ?>
+    <div class="alert alert-danger" role="alert">
+        <?= htmlspecialchars($error) ?>
+    </div>
+<?php endif; 
+
+// 2. Logika Menampilkan NOTIFIKASI Sesi Habis (Flash Message)
+if (isset($_SESSION['flash_message'])): ?>
+    <div class="alert alert-warning" role="alert">
+        <?= htmlspecialchars($_SESSION['flash_message']) ?>
+    </div>
+    <?php
+    // HAPUS Sesi setelah ditampilkan agar tidak muncul lagi
+    unset($_SESSION['flash_message']); 
+endif;
+?>
   <!-- Bagian kanan (form login) -->
   <div class="right-login">
 
