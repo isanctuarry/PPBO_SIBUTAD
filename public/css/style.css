@@ -1,29 +1,55 @@
+/* --- GLOBAL STYLES --- */
 body {
     font-family: 'Inter', sans-serif;
-    background: #f5f6fa; 
+    
+    /* PENGATURAN GAMBAR LATAR BELAKANG */
+    background-image: url('../../App/public/gambar/login.jpeg'); 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center center;
+    background-attachment: fixed; /* Membuat gambar diam saat scroll */
+    
+    /* Fallback warna solid jika gambar gagal dimuat */
+    background-color: #f5f6fa; 
+    
     margin: 0;
     padding: 0;
 }
 
-/* Card */
+/* --- CARD / CONTAINER --- */
 .card {
     background: #fff;
     border-radius: 12px;
     padding: 20px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+    /* Shadow yang lebih halus dan modern */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08); 
     margin-bottom: 20px;
 }
 
-/* Form */
+/* --- FORM & INPUTS --- */
 
-input, select, textarea {
+/* Selector untuk input teks, select, dan textarea */
+input:not([type="checkbox"]), 
+input:not([type="radio"]),
+select, 
+textarea {
     width: 100%;
     padding: 10px;
     border-radius: 8px;
     border: 1px solid #ccc;
     margin-bottom: 12px;
+    /* Penting: Memastikan padding tidak membuat lebar melebihi 100% */
+    box-sizing: border-box; 
+    transition: border-color 0.3s;
 }
 
+/* Efek saat input difokuskan */
+input:focus, select:focus, textarea:focus {
+    border-color: #2d3250; 
+    outline: none; 
+}
+
+/* --- BUTTON --- */
 button {
     background: #2d3250;
     color: white;
@@ -31,15 +57,27 @@ button {
     border-radius: 8px;
     border: none;
     cursor: pointer;
+    transition: background 0.3s; 
 }
-tton:hover {
-    opacity: 0.9;
+
+/* SINTAKS YANG SUDAH DIPERBAIKI */
+button:hover {
+    background: #464c6d; 
 }
-/* Table */
+
+/* --- TABLE --- */
 table {
     width: 100%;
     border-collapse: collapse;
 }
+
+/* Tambahan: Wrapper responsif untuk tabel besar */
+.table-responsive {
+    overflow-x: auto;
+    border-radius: 12px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
 table thead {
     background: #2d3250;
     color: white;
@@ -47,10 +85,26 @@ table thead {
 table th, table td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
+    text-align: left;
 }
+
+/* Efek baris selang-seling (striped) */
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Menghilangkan border bawah pada baris terakhir */
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- UTILITY / ALERT --- */
 .alert {
     padding: 12px;
     border-radius: 6px;
-    color: #f11010; 
+    color: #f11010;
+    /* Menambahkan background dan border agar pesan error lebih terlihat */
+    background-color: #ffe0e0; 
+    border: 1px solid #f11010;
     margin-bottom: 15px;
 }
