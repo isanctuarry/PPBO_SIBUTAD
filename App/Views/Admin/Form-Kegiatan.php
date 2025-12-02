@@ -9,7 +9,7 @@
             </div>
 
             <div class="card-body">
-                <form action="<?= $base_url ?>/kegiatan/update" method="POST">
+                <form action="<?= $base_url ?>/index.php?url=kegiatan/update" method="POST">
 
                     <input type="hidden" name="id" value="<?= $kegiatan['id']; ?>">
 
@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="d-flex justify-content-between mt-4">
-                        <a href="<?= $base_url ?>/kegiatan" class="btn btn-secondary">
+                        <a href="<?= $base_url ?>/index.php?url=kegiatan" class="btn btn-secondary">
                             Kembali
                         </a>
 
