@@ -42,7 +42,7 @@ class KegiatanController extends Controller {
             $this->kegiatanModel->hapusKegiatan($id);
         }
 
-        header("Location: /kegiatan");
+        header("Location: /index.php?url=kegiatan");
         exit;
     }
 
@@ -61,7 +61,7 @@ class KegiatanController extends Controller {
 
     public function update() {   // ← FIXED!!
         if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-            header("Location: /kegiatan");
+            header("Location: /index.php?url=kegiatan");
             exit;
         }
 
@@ -79,7 +79,7 @@ class KegiatanController extends Controller {
         ];
 
         if ($this->kegiatanModel->updateKegiatan($id, $data)) {
-            header("Location: /kegiatan");
+            header("Location: /index.php?url=kegiatan");
             exit;
         } else {
             echo "Gagal update";
