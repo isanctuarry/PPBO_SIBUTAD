@@ -23,9 +23,7 @@ if (strpos($host, 'localhost') !== false) {
     <?php if(isset($_SESSION['admin'])): ?>
       <div class="ms-auto">
         <a class="btn btn-outline-light btn-sm" href="<?= $base_url ?>/index.php?url=admin/dashboard">Dashboard</a>
-        <a class="btn btn-light btn-sm" href="<?= $base_url ?>/index.php?url=admin/DaftarTamu">Laporan</a>
-        <a class="btn btn-light btn-sm" href="<?= $base_url ?>/index.php?url=admin/form-kegiatan">Laporan</a>
-        <a class="btn btn-light btn-sm" href="<?= $base_url ?>/index.php?url=admin/laporan">Laporan</a>
+        <a class="btn btn-light btn-sm" href="/index.php?url=admin/laporan">Laporan</a>
         <a class="btn btn-light btn-sm" href="<?= $base_url ?>/index.php?url=admin/logout">Logout</a>
       </div>
     <?php else: ?>
