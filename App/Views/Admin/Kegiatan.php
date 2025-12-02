@@ -49,7 +49,7 @@
             <td><?= date('d-m-Y', strtotime($k['tanggal_kegiatan'])) ?></td>
             <td>
                 <a class="btn btn-sm btn-primary"
-                   href="index.php?url=kegiatan/edit/">
+                   href="index.php?url=kegiatan/edit/<?= $k['id'] ?>">
                    Edit
                 </a>
 
