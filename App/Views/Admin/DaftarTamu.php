@@ -1,5 +1,14 @@
 <?php require __DIR__ . '/../Layout/Header.php'; ?>
-
+<div style="margin-bottom: 15px;">
+    <button 
+        onclick="history.back()" 
+        class="btn btn-sm btn-outline-secondary" 
+        title="Kembali ke halaman sebelumnya">
+        
+        &larr; Kembali 
+        
+        </button>
+</div>
 <div class="container mt-5">
     
     <div class="row align-items-center mb-4 border-bottom pb-2">
