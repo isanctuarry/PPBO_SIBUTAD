@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Inter', sans-serif;
     background: #f5f6fa; 
@@ -5,7 +6,9 @@ body {
     padding: 0;
 }
 
-/* Card */
+
+
+/* Card - Container umum */
 .card {
     background: #fff;
     border-radius: 12px;
@@ -13,9 +16,9 @@ body {
     box-shadow: 0 6px 12px rgba(0,0,0,0.05);
     margin-bottom: 20px;
 }
-
-/* Form */
-
+/* ===================================================================
+   FORM ELEMENTS
+   =================================================================== */
 input, select, textarea {
     width: 100%;
     padding: 10px;
@@ -24,39 +27,54 @@ input, select, textarea {
     margin-bottom: 12px;
 }
 
+
+
+
 input:focus, select:focus, textarea:focus {
     border-color: #9f6920; 
-    box-shadow: 0 0 0 0.2rem rgba(159, 105, 32, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(159, 105, 32, 0.25); 
 }
 
-button {
+.btn, .btn-primary, button {
     background: #2d3250 !important;
-    color: white;
+    color: white !important; 
+    border-color: #2d3250 !important; 
     padding: 10px 15px;
     border-radius: 8px;
-    border: none;
     cursor: pointer;
 }
-tton:hover {
+
+.btn:hover, button:hover {
     opacity: 0.9;
 }
-/* Table */
+
+/* ===================================================================
+   TABLE STYLES
+   =================================================================== */
 table {
     width: 100%;
     border-collapse: collapse;
 }
-table thead {
+
+table thead, .table thead {
     background: #2d3250 !important;
     color: white !important;
+
 }
+
 table th, table td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
 }
+
+/* ==================================================================
+   ALERT/WARNING STYLES
+   ================================================================== */
 .alert {
     padding: 12px;
     border-radius: 6px;
-    background: #ffe5e5 !important;
-    color: #f11010 !important; 
     margin-bottom: 15px;
+    background: #ffe5e5 !important; 
+    color: #f11010 !important; 
+    border: 1px solid #f11010;
 }
