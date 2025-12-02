@@ -1,36 +1,67 @@
-
+/* --- GLOBAL STYLES --- */
 body {
     font-family: 'Inter', sans-serif;
-    background: #f5f6fa; 
+    
+    /* PENGATURAN GAMBAR LATAR BELAKANG */
+    background-image: url('../../public/gambar/login.jpeg'); 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center center;
+    background-attachment: fixed; /* Membuat gambar diam saat scroll */
+    
+    /* Fallback warna solid jika gambar gagal dimuat */
+    background-color: #f5f6fa; 
+    
     margin: 0;
     padding: 0;
 }
 
+<<<<<<< HEAD
 
 /* Card - Container umum */
+=======
+/* --- CARD / CONTAINER --- */
+>>>>>>> a82cd83604603aece548ccd2ab394b89e96b0c73
 .card {
     background: #fff;
     border-radius: 12px;
     padding: 20px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+    /* Shadow yang lebih halus dan modern */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08); 
     margin-bottom: 20px;
 }
+
 /* ===================================================================
    FORM ELEMENTS
    =================================================================== */
-input, select, textarea {
+
+/* Selector untuk input teks, select, dan textarea */
+input:not([type="checkbox"]):not([type="radio"]), 
+select, 
+textarea {
+/* Catatan: Di sini saya menggunakan selector yang lebih spesifik dari HEAD untuk menghindari checkbox/radio,
+   tapi saya juga memasukkan select dan textarea seperti pada versi lainnya.
+   Beberapa versi konflik menggunakan `input, select, textarea`, yang akan memilih semua jenis input. 
+   Versi ini menggabungkan keduanya. */
     width: 100%;
     padding: 10px;
     border-radius: 8px;
     border: 1px solid #ccc;
     margin-bottom: 12px;
+    /* Penting: Memastikan padding tidak membuat lebar melebihi 100% */
+    box-sizing: border-box; 
+    transition: border-color 0.3s;
 }
 
+/* Efek saat input difokuskan (Mengambil warna fokus dari HEAD: #2d3250) */
 input:focus, select:focus, textarea:focus {
-    border-color: #9f6920; 
-    box-shadow: 0 0 0 0.2rem rgba(159, 105, 32, 0.25); 
+    border-color: #2d3250; 
+    outline: none; 
+    /* Menambahkan box-shadow dari versi konflik: b006cf45704a31ed6ee3f39895a526979c81f214 */
+    box-shadow: 0 0 0 0.2rem rgba(45, 50, 80, 0.25); 
 }
 
+/* --- BUTTON --- */
 .btn, .btn-primary, button {
     background: #2d3250 !important;
     color: white !important; 
@@ -38,10 +69,14 @@ input:focus, select:focus, textarea:focus {
     padding: 10px 15px;
     border-radius: 8px;
     cursor: pointer;
+    transition: background 0.3s; 
 }
 
-.btn:hover, button:hover {
-    opacity: 0.9;
+/* SINTAKS YANG SUDAH DIPERBAIKI */
+button:hover, .btn:hover {
+    /* Mengambil warna hover dari HEAD karena terlihat lebih terstruktur */
+    background: #464c6d !important; 
+    opacity: 1; /* Menghapus opasitas jika background sudah diubah */
 }
 
 /* ===================================================================
@@ -52,15 +87,32 @@ table {
     border-collapse: collapse;
 }
 
+/* Tambahan: Wrapper responsif untuk tabel besar */
+.table-responsive {
+    overflow-x: auto;
+    border-radius: 12px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
 table thead, .table thead {
     background: #2d3250 !important;
     color: white !important;
-
 }
 
 table th, table td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Efek baris selang-seling (striped) */
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Menghilangkan border bawah pada baris terakhir */
+table tbody tr:last-child td {
+    border-bottom: none;
 }
 
 /* ==================================================================
@@ -70,6 +122,8 @@ table th, table td {
     padding: 12px;
     border-radius: 6px;
     margin-bottom: 15px;
+    /* Mengambil style ALERT dari versi konflik: b006cf45704a31ed6ee3f39895a526979c81f214 
+       karena lebih lengkap (background, color, border) */
     background: #ffe5e5 !important; 
     color: #f11010 !important; 
     border: 1px solid #f11010;
