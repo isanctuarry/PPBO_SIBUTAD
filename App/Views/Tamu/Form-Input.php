@@ -28,7 +28,7 @@
 
         <div class="mb-3">
           <label class="form-label">Kegiatan</label>
-            <select name="id" class="form-select" required>
+            <select name="id_kegiatan" class="form-select" required>
               <option value="">— Pilih Kegiatan —</option>
                 <?php if (isset($kegiatan) && is_array($kegiatan)): ?>
                   <?php foreach ($kegiatan as $k): ?>
