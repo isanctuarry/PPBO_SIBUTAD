@@ -49,12 +49,12 @@
             <td><?= date('d-m-Y', strtotime($k['tanggal_kegiatan'])) ?></td>
             <td>
                 <a class="btn btn-sm btn-primary"
-                   href="index.php?url=kegiatan/edit/<?= $k['id'] ?>">
+                   href="index.php?url=kegiatan/edit/<?= $k['id_kegiatan'] ?>">
                    Edit
                 </a>
 
                 <a class="btn btn-sm btn-danger" 
-                   href="index.php?url=kegiatan/hapus/<?= $k['id'] ?>" 
+                   href="index.php?url=kegiatan/hapus/<?= $k['id_kegiatan'] ?>" 
                    onclick="return confirm('Yakin ingin menghapus?')">
                    Hapus
                 </a>
