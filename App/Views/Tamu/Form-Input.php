@@ -24,17 +24,19 @@
             <input type="email" name="email" class="form-control">
           </div>
 
-          <div class="mb-3">
-            <label class="form-label">Kegiatan</label>
-            <!-- PENTING: Atribut 'required' ditambahkan di sini -->
-            <!-- Ini mencegah browser mengirim form jika user belum memilih kegiatan -->
+         
+
+        <div class="mb-3">
+          <label class="form-label">Kegiatan</label>
             <select name="id" class="form-select" required>
               <option value="">— Pilih Kegiatan —</option>
-                <?php foreach ($kegiatan as $k): ?>
-                  <option value="<?= $k['id'] ?>">
-                    <?= htmlspecialchars($k['nama_kegiatan']) ?>
-                  </option>
-                <?php endforeach; ?>
+                <?php if (isset($kegiatan) && is_array($kegiatan)): ?>
+                  <?php foreach ($kegiatan as $k): ?>
+                    <option value="<?= $k['id'] ?>">
+                      <?= htmlspecialchars($k['nama_kegiatan']) ?>
+                    </option>
+                  <?php endforeach; ?>
+                <?php endif; ?>
             </select>
 
             <div class="form-text text-muted">Wajib memilih salah satu kegiatan.</div>
