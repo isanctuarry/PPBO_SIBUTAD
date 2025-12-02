@@ -32,7 +32,7 @@
               <option value="">— Pilih Kegiatan —</option>
                 <?php if (isset($kegiatan) && is_array($kegiatan)): ?>
                   <?php foreach ($kegiatan as $k): ?>
-                    <option value="<?= $k['id'] ?>">
+                    <option value="<?= $k['id_kegiatan'] ?>">
                       <?= htmlspecialchars($k['nama_kegiatan']) ?>
                     </option>
                   <?php endforeach; ?>
