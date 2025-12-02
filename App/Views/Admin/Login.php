@@ -1,5 +1,5 @@
 <?php require __DIR__ . '/../Layout/Header.php'; ?>
-<link rel="stylesheet" href="<?= $base_url ?>/assets/css/login-style.css">
+<link rel="stylesheet" href="<?= $base_url ?>/assets/css/style.css">
 
 <div class="login-wrapper">
 
