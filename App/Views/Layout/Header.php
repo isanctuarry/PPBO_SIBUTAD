@@ -18,7 +18,7 @@ if (strpos($host, 'localhost') !== false) {
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
-    <a class="navbar-brand" href="<?= $base_url ?>/index.php">Buku Tamu</a>
+    <a class="navbar-brand" href="<?= $base_url ?>/index.php">SIBUTAD</a>
     
     <?php if(isset($_SESSION['admin'])): ?>
       <div class="ms-auto">
