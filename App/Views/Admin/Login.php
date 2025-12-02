@@ -2,31 +2,41 @@
 <link rel="stylesheet" href="<?= $base_url ?>/public/css/style.css">
 <div class="login-wrapper">
 
-  <div class="left-art">
-    <h1>WELCOME</h1>
-  </div>
+    <div class="left-art">
+        <h1>WELCOME</h1>
+    </div>
 
-  <!-- Bagian kanan (form login) -->
-  <div class="right-login">
+    <?php if (session_status() === PHP_SESSION_NONE) { session_start(); } ?>
+    
+    <div class="right-login">
 
-    <?php if(!empty($error)): ?>
-      <div class="alert alert-danger"><?= $error ?></div>
-    <?php endif; ?>
+        <?php if (isset($_SESSION['flash_message'])): ?>
+            <div class="alert alert-warning" role="alert">
+                <?= htmlspecialchars($_SESSION['flash_message']) ?>
+            </div>
+            <?php unset($_SESSION['flash_message']); ?>
+        <?php endif; ?>
 
-    <form method="post" action="<?= $base_url ?>/index.php?url=admin/dologin">
-      <div class="mb-3">
-        <label class="form-label">Username</label>
-        <input name="username" class="form-control" required>
-      </div>
+        <?php if(isset($error)): ?>
+            <div class="alert alert-danger" role="alert">
+                <?= htmlspecialchars($error) ?>
+            </div>
+        <?php endif; ?>
 
-      <div class="mb-3">
-        <label class="form-label">Password</label>
-        <input name="password" type="password" class="form-control" required>
-      </div>
+        <form method="post" action="<?= $base_url ?>/index.php?url=admin/dologin">
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input name="username" class="form-control" required>
+            </div>
 
-      <button class="btn btn-primary">Login</button>
-    </form>
-  </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input name="password" type="password" class="form-control" required>
+            </div>
+
+            <button class="btn btn-primary">Login</button>
+        </form>
+    </div>
 
 </div>
 
