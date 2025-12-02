@@ -3,7 +3,7 @@
         'name' => 'digital-tamu/project',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'cb038762ef4d70728d6692aaa98a0f22ec854860',
+        'reference' => '643c16baa0bfa71091daf7f4de1e9b2974845ba5',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'digital-tamu/project' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'cb038762ef4d70728d6692aaa98a0f22ec854860',
+            'reference' => '643c16baa0bfa71091daf7f4de1e9b2974845ba5',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
