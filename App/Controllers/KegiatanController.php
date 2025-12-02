@@ -32,8 +32,9 @@ class KegiatanController extends Controller {
 
         $this->kegiatanModel->tambahKegiatan($data);
 
-        header("Location: /kegiatan");
+       header("Location: /index.php?url=kegiatan");
         exit;
+
     }
 
     public function hapus($id = null) {
