@@ -3,7 +3,7 @@
 <h4>Manajemen Kegiatan</h4>
 
 <div class="row">
-
+  <!-- FORM INPUT -->
   <div class="col-md-6">
     <div class="card p-3 mb-3">
       <form method="post" action="index.php?url=kegiatan/simpan">
@@ -23,46 +23,46 @@
       </form>
     </div>
   </div>
+
+  <!-- TABEL DATA -->
   <div class="col-md-6">
     <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Nama</th>
-          <th>Lokasi</th>
-          <th>Tanggal</th>
-          <th style="width: 140px;">Aksi</th>
-        </tr>
-      </thead>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nama</th>
+      <th>Lokasi</th>
+      <th>Tanggal</th>
+      <th style="width: 140px;">Aksi</th>
+    </tr>
+  </thead>
 
-      <tbody>
-        <?php if(empty($kegiatan)): ?>
-            <tr><td colspan="5" class="text-center">Belum ada data.</td></tr>
-        <?php else: ?>
-            <?php foreach($kegiatan as $i => $k): ?>
-              <tr>
-                <td><?= $i+1 ?></td>
-                <td><?= htmlspecialchars($k['nama_kegiatan']) ?></td>
-                <td><?= htmlspecialchars($k['lokasi'] ?? '-') ?></td>
-                <td><?= date('d-m-Y', strtotime($k['tanggal_kegiatan'])) ?></td>
-                <td>
-                    <a class="btn btn-sm btn-primary"
-                       href="index.php?url=kegiatan/edit/<?= $k['id'] ?>">
-                       Edit
-                    </a>
-                    <a class="btn btn-sm btn-danger" 
-                       href="index.php?url=kegiatan/hapus/<?= $k['id'] ?>" 
-                       onclick="return confirm('Yakin ingin menghapus?')">
-                       Hapus
-                    </a>
-                </td>
-              </tr>
-            <?php endforeach;?>
-        <?php endif; ?>
-      </tbody>
-    </table>
-  </div> <!-- ← ini yang hilang -->
+  <tbody>
+    <?php if(empty($kegiatan)): ?>
+        <tr><td colspan="5" class="text-center">Belum ada data.</td></tr>
+    <?php else: ?>
+        <?php foreach($kegiatan as $i => $k): ?>
+          <tr>
+            <td><?= $i+1 ?></td>
+            <td><?= htmlspecialchars($k['nama_kegiatan']) ?></td>
+            <td><?= htmlspecialchars($k['lokasi'] ?? '-') ?></td>
+            <td><?= date('d-m-Y', strtotime($k['tanggal_kegiatan'])) ?></td>
+            <td>
+                <a class="btn btn-sm btn-primary"
+                   href="index.php?url=kegiatan/edit/<?= $k['id'] ?>">
+                   Edit
+                </a>
 
-</div> <!-- ← ini yang hilang -->
+                <a class="btn btn-sm btn-danger" 
+                   href="index.php?url=kegiatan/hapus/<?= $k['id'] ?>" 
+                   onclick="return confirm('Yakin ingin menghapus?')">
+                   Hapus
+                </a>
+            </td>
+          </tr>
+        <?php endforeach;?>
+    <?php endif; ?>
+  </tbody>
+</table>
 
 <?php require __DIR__ . '/../Layout/Footer.php'; ?>
