@@ -64,6 +64,6 @@
     <?php endif; ?>
   </tbody>
 </table>
-
+</div>
 
 <?php require __DIR__ . '/../Layout/Footer.php'; ?>
