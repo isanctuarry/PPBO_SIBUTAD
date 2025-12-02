@@ -45,7 +45,7 @@
                 <th>Nama</th>
                 <th>Lokasi</th>
                 <th>Tanggal</th>
-                <th style="width: 140px;">Aksi</th>
+                <th style="width: 120px;">Aksi</th>
             </tr>
         </thead>
 
@@ -61,17 +61,25 @@
                     <td><?= htmlspecialchars($k['nama_kegiatan']) ?></td>
                     <td><?= htmlspecialchars($k['lokasi'] ?? '-') ?></td>
                     <td><?= date('d-m-Y', strtotime($k['tanggal_kegiatan'])) ?></td>
-                    <td>
-                        <a class="btn btn-sm btn-primary"
-                           href="index.php?url=kegiatan/edit/<?= $k['id_kegiatan'] ?>">
-                           Edit
+                    <td class="text-center">
+
+                        <!-- TOMBOL EDIT -->
+                        <a 
+                            class="btn btn-sm btn-warning"
+                            title="Edit data"
+                            href="index.php?url=kegiatan/edit/<?= $k['id_kegiatan'] ?>">
+                            <i class="fas fa-pencil-alt"></i>
                         </a>
 
-                        <a class="btn btn-sm btn-danger" 
-                           href="index.php?url=kegiatan/hapus/<?= $k['id_kegiatan'] ?>" 
-                           onclick="return confirm('Yakin ingin menghapus?')">
-                           Hapus
+                        <!-- TOMBOL HAPUS -->
+                        <a 
+                            class="btn btn-sm btn-danger"
+                            title="Hapus data"
+                            href="index.php?url=kegiatan/hapus/<?= $k['id_kegiatan'] ?>"
+                            onclick="return confirm('Yakin ingin menghapus?')">
+                            <i class="fas fa-trash"></i>
                         </a>
+
                     </td>
                 </tr>
                 <?php endforeach; ?>
