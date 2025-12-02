@@ -1,3 +1,4 @@
+
 /* --- GLOBAL STYLES --- */
 body {
     font-family: 'Inter', sans-serif;
@@ -16,12 +17,10 @@ body {
     padding: 0;
 }
 
-<<<<<<< HEAD
-
 /* Card - Container umum */
-=======
+
 /* --- CARD / CONTAINER --- */
->>>>>>> a82cd83604603aece548ccd2ab394b89e96b0c73
+
 .card {
     background: #fff;
     border-radius: 12px;
