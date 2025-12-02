@@ -471,8 +471,8 @@
             ],
             "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
             "keywords": [
+                ".env",
                 "dotenv",
-                "env",
                 "environment"
             ],
             "support": {
