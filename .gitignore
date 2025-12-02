@@ -3,3 +3,4 @@
 vendor/
 log.txt
 .vercel
+.env*.local

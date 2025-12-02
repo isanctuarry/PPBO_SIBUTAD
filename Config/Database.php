@@ -20,7 +20,7 @@ class Database {
         $host = $_ENV['DB_HOST'] ?? "localhost";
         $port = $_ENV['DB_PORT'] ?? "3306";
         $dbname = $_ENV['DB_NAME'] ?? "buku_tamu";
-        $sslmode = $_ENV['DB_SSLMODE'] ?? ""; // vercel postgres pakai require
+        $sslmode = $_ENV['DB_SSLMODE'] ?? "require"; // vercel postgres pakai require
         $user = $_ENV['DB_USER'] ?? "root";
         $pass = $_ENV['DB_PASS'] ?? "";
 
