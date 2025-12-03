@@ -1,13 +1,12 @@
 <?php  
-
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 // Force working directory to project root
 chdir(__DIR__ . '/..'); 
-
-session_start();
-
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use App\Core\App;
 
-// Jalankan App MVC
+// Jalankan router
 $app = new App();

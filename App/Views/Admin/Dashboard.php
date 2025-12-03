@@ -1,26 +1,86 @@
 <?php require __DIR__ . '/../Layout/Header.php'; ?>
-<div class="row">
-  <div class="col-md-4">
-    <div class="card mb-3">
-      <div class="card-body">
-        <h6>Total Tamu</h6>
-        <h3><?= $stat['total_tamu'] ?? 0 ?></h3>
-      </div>
+
+<!-- FONT & STYLE MODERN -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    body, h1, h3, h5 {
+        font-family: 'Poppins', sans-serif !important;
+    }
+    .card-hover {
+        border-radius: 18px !important;
+        transition: 0.3s ease;
+    }
+    .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 22px rgba(0,0,0,0.15) !important;
+    }
+</style>
+
+<h3 class="mb-4">Dashboard</h3>
+
+<!-- ======================================================= -->
+<!-- BAGIAN 1: 3 SECTION UTAMA (Akses Cepat/Navigasi) -->
+<!-- ======================================================= -->
+<div class="row mb-4">
+    <!-- 1. Kelola Kegiatan -->
+    <div class="col-md-4 mb-3">
+        <div class="card card-hover shadow-lg">
+            <a href="<?= $base_url ?>/index.php?url=kegiatan" class="card-body p-4 text-decoration-none text-center">
+                <i class="fas fa-calendar-alt fa-3x mb-3 text-dark-sibutad"></i>
+                <h5 class="card-title text-dark-sibutad font-weight-bold">KELOLA KEGIATAN</h5>
+            </a>
+        </div>
     </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card mb-3">
-      <div class="card-body">
-        <h6>Total Kegiatan</h6>
-        <h3><?= $stat['total_kegiatan'] ?? 0 ?></h3>
-      </div>
+
+    <!-- 2. Daftar Tamu -->
+    <div class="col-md-4 mb-3">
+        <div class="card card-hover shadow-lg">
+            <a href="<?= $base_url ?>/index.php?url=tamu/daftar" class="card-body p-4 text-decoration-none text-center">
+                <i class="fas fa-users fa-3x mb-3 text-dark-sibutad"></i>
+                <h5 class="card-title text-dark-sibutad font-weight-bold">DAFTAR TAMU</h5>
+            </a>
+        </div>
     </div>
-  </div>
+
+    <!-- 3. Rekap Laporan -->
+    <div class="col-md-4 mb-3">
+        <div class="card card-hover shadow-lg">
+            <a href="index.php?url=laporan/rekap" class="card-body p-4 text-decoration-none text-center">
+                <i class="fas fa-chart-bar fa-3x mb-3 text-dark-sibutad"></i>
+                <h5 class="card-title text-dark-sibutad font-weight-bold">REKAP LAPORAN</h5>
+            </a>
+        </div>
+    </div>
 </div>
 
-<div class="mt-3">
-  <a class="btn btn-outline-primary" href="<?= $base_url ?>/index.php?url=kegiatan">Kelola Kegiatan</a>
-  <a class="btn btn-outline-secondary" href="<?= $base_url ?>/index.php?url=tamu/daftar">Daftar Tamu</a>
-  <a class="btn btn-outline-success" href="<?= $base_url ?>/index.php?url=laporan/rekap">Laporan Rekap</a>
+<!-- ======================================================= -->
+<!-- BAGIAN 2: 2 SECTION STATISTIK (Total) -->
+<!-- ======================================================= -->
+<div class="row mt-4">
+
+    <!-- 1. Total Tamu -->
+    <div class="col-md-6 mb-3">
+        <div class="card card-hover shadow-lg">
+            <a href="index.php?url=laporan/rekap" class="card-body p-4 text-decoration-none text-center">
+                <i class="fas fa-user-check fa-3x mb-3 text-dark-sibutad"></i>
+                <h5 class="card-title text-dark-sibutad font-weight-bold">Total Tamu</h5>
+                <h1 class="display-4 font-weight-bold"><?= $stat['total_tamu'] ?? 0 ?></h1>
+            </a>
+        </div>
+    </div>
+
+    <!-- 2. Total Kegiatan -->
+    <div class="col-md-6 mb-3">
+        <div class="card card-hover shadow-lg">
+            <a href="index.php?url=laporan/rekap" class="card-body p-4 text-decoration-none text-center">
+                <i class="fas fa-calendar-check fa-3x mb-3 text-dark-sibutad"></i>
+                <h5 class="card-title text-dark-sibutad font-weight-bold">Total Kegiatan</h5>
+                <h1 class="display-4 font-weight-bold"><?= $stat['total_kegiatan'] ?? 0 ?></h1>
+            </a>
+        </div>
+    </div>
+
 </div>
+
 <?php require __DIR__ . '/../Layout/Footer.php'; ?>

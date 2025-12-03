@@ -4,7 +4,7 @@ $host = $_SERVER['HTTP_HOST'];
 if (strpos($host, 'localhost') !== false) {
   $base_url = 'http://' . $host;
 } else {
-  $base_url = 'https://' . $host . '/';
+  $base_url = 'https://' . $host;
 }
 ?>
 <!doctype html>
@@ -13,12 +13,18 @@ if (strpos($host, 'localhost') !== false) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title><?= $title ?? 'SIBUTAD' ?></title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="<?= $base_url ?>/public/css/style.css?v=1">
 
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FIX: LOAD STYLE CSS KAMU -->
+  <link rel="stylesheet" href="<?= $base_url ?>/public/css/style.css?v=1.0">
 </head>
+
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: #2d3250;">
   <div class="container">
     <a class="navbar-brand" href="<?= $base_url ?>/index.php">SIBUTAD</a>
     
@@ -36,4 +42,6 @@ if (strpos($host, 'localhost') !== false) {
     <?php endif;?>
   </div>
 </nav>
+
+<!-- CONTAINER -->
 <div class="container my-4">

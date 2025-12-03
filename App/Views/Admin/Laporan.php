@@ -1,4 +1,14 @@
 <?php require __DIR__ . '/../Layout/Header.php'; ?>
+<div style="margin-bottom: 15px;">
+    <button 
+        onclick="history.back()" 
+        class="btn btn-sm btn-outline-secondary" 
+        title="Kembali ke halaman sebelumnya">
+        
+        &larr; Kembali 
+        
+        </button>
+</div>
 <h4>Rekap Tamu per Kegiatan</h4>
 <table class="table table-hover">
   <thead><tr><th>#</th><th>Nama Kegiatan</th><th>Total Tamu</th></tr></thead>
