@@ -127,8 +127,8 @@ table tbody tr:last-child td {
 }
 
 .navbar-brand span {
-    font-size: 1.4 rem !important; 
-    font-weight: 600 !important;
+    font-size: 3.5rem !important; /* Nilai yang sangat besar */
+    font-weight: 700 !important;
 }
 
 .logo {

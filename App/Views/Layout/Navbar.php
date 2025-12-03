@@ -9,8 +9,8 @@
   <div class="container">
 
     <!-- Brand -->
-    <a class="navbar-brand d-flex align-items-center" href="<?= $base_url ?>/">
-    <img src="/gambar/logo.png" class="logo-navbar me-2">
+   <a class="navbar-brand d-flex align-items-center" href="<?= $base_url ?>/">
+    <img src="/public/gambar/logo.png" class="logo-navbar me-2">
     <span class="fw-bold">Buku Tamu</span>
     </a>
 
