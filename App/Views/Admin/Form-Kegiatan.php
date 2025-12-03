@@ -12,7 +12,7 @@
 <div class="row justify-content-center mt-4">
     <div class="col-md-6">
         <div class="card shadow-sm">
-            <div class="card-header bg-dark text-white text-center fw-bold">
+            <div class="card-header bg-darkblue text-white text-center fw-bold">
                 Edit Kegiatan
             </div>
 
