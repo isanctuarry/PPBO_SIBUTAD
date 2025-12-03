@@ -72,6 +72,17 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 0 0 0.2rem rgba(45, 50, 80, 0.20);
 }
 
+.btn-primary {
+    background-color: #2d3250;
+    border-color: #2d3250;
+    border-radius: 12px;
+}
+
+.btn-primary:hover {
+    background-color: #43486b;
+    border-color: #43486b;
+}
+
 /* =========================================================
    LOGIN BUTTON ONLY (BUKAN NAVBAR!!)
    ========================================================= */
