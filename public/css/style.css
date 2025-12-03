@@ -1,12 +1,12 @@
 /* --- GLOBAL STYLES --- */
 body {
     font-family: 'Inter', sans-serif;
-    
-    /* FIX: Background Image */
-    background-image: url('app/public/gambar/login.jpeg');
+
+    /* BACKGROUND LOGIN FIX */
+    background-image: url('../gambar/login.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-attachment: fixed;
 
     background-color: #f5f6fa;
@@ -14,7 +14,7 @@ body {
     padding: 0;
 }
 
-/* --- CARD --- */
+/* CARD */
 .card {
     background: #fff;
     border-radius: 12px;
@@ -23,9 +23,9 @@ body {
     margin-bottom: 20px;
 }
 
-/* --- FORM ELEMENTS --- */
-input:not([type="checkbox"]):not([type="radio"]),
-select,
+/* FORM INPUT */
+input:not([type="checkbox"]):not([type="radio"]), 
+select, 
 textarea {
     width: 100%;
     padding: 10px;
@@ -39,10 +39,10 @@ textarea {
 input:focus, select:focus, textarea:focus {
     border-color: #2d3250;
     outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(45,50,80,0.25);
+    box-shadow: 0 0 0 0.2rem rgba(45, 50, 80, 0.25);
 }
 
-/* --- BUTTON --- */
+/* BUTTON */
 .btn, .btn-primary, button {
     background: #2d3250 !important;
     color: white !important;
@@ -58,7 +58,7 @@ button:hover, .btn:hover {
     opacity: 1;
 }
 
-/* --- TABLE --- */
+/* TABLE */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -80,15 +80,7 @@ table th, table td {
     border-bottom: 1px solid #ddd;
 }
 
-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-/* --- ALERT --- */
+/* ALERT */
 .alert {
     padding: 12px;
     border-radius: 6px;
