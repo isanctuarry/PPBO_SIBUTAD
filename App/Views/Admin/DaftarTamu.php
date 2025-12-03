@@ -44,26 +44,33 @@
                                     <td><?= htmlspecialchars($column['email']) ?></td>
                                     
                                     <td class="text-center">
-                                        <a href="/tamu/<?= $column['id'] ?? ($i + 1) ?>" class="btn btn-sm btn-outline-info me-2">
-                                            Lihat
-                                        </a>
-                                        <form action="/tamu/hapus/<?= $column['id'] ?? ($i + 1) ?>" method="POST" class="d-inline">
-                                            <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
-                                                Hapus
-                                            </button>
-                                        </form>
-                                    </td>
-                                    
-                                </tr>
+                                        <td class="text-center">
+                                            <!-- EDIT (icon pensil) -->
+                                            <a href="/tamu/edit/<?= $column['id'] ?? ($i + 1) ?>" 
+                                            class="btn btn-sm btn-primary me-2"
+                                            title="Edit">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </a>
+
+                                            <!-- HAPUS (icon trash) -->
+                                            <form action="/tamu/hapus/<?= $column['id'] ?? ($i + 1) ?>" 
+                                                method="POST" 
+                                                class="d-inline">
+                                                <button type="submit" 
+                                                        class="btn btn-sm btn-danger"
+                                                        onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');"
+                                                        title="Hapus">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </form> 
+                                        </td>
+                                     </tr>
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </tbody>
                 </table>
-            </div>
-            
+            </div>  
         </div>
     </div>
-
 </div>
-
 <?php require __DIR__ . '/../Layout/Footer.php'; ?>
