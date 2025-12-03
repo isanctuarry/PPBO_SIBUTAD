@@ -8,8 +8,8 @@
   },
   "routes": [
     {
-      "src": "/gambar/(.*)",
-      "dest": "/gambar/$1"
+    "src": "/gambar/(.*)",
+    "dest": "/public/gambar/$1"
     },
     {
       "src": "/css/(.*)",
