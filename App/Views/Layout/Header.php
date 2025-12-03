@@ -51,7 +51,6 @@ if (strpos($host, 'localhost') !== false) {
     <?php else: ?>
       <div class="ms-auto">
         <a class="btn btn-outline-light btn-sm" href="<?= $base_url ?>/index.php?url=admin/login">Login Admin</a>
-        <a class="btn btn-light btn-sm" href="<?= $base_url ?>/index.php?url=tamu/daftar">Daftar Kunjungan</a>
       </div>
     <?php endif;?>
   </div>
