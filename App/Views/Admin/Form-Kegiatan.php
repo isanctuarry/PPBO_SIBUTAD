@@ -13,8 +13,10 @@
     <div class="col-md-6">
         
         <div class="card shadow-sm">
-            <div class="card-header bg-primary text-white">
-                <h5 class="m-0">Edit Kegiatan</h5>
+            <a href="<?= $base_url ?>/index.php?url=kegiatan/edit&id=<?= $k['id_kegiatan']; ?>" class="btn btn-sm btn-secondary">
+            Edit Kegiatan
+            </a>
+
             </div>
 
             <div class="card-body">
