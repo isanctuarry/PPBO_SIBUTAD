@@ -2,14 +2,14 @@
 body {
     font-family: 'Inter', sans-serif;
     
-    /* FIX: Path Background Image */
-    background-image: url('../gambar/login.jpeg'); 
+    /* FIX: Background Image */
+    background-image: url('../gambar/login.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-attachment: fixed;
 
-    background-color: #f5f6fa; 
+    background-color: #f5f6fa;
     margin: 0;
     padding: 0;
 }
@@ -24,8 +24,8 @@ body {
 }
 
 /* --- FORM ELEMENTS --- */
-input:not([type="checkbox"]):not([type="radio"]), 
-select, 
+input:not([type="checkbox"]):not([type="radio"]),
+select,
 textarea {
     width: 100%;
     padding: 10px;
@@ -39,7 +39,7 @@ textarea {
 input:focus, select:focus, textarea:focus {
     border-color: #2d3250;
     outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(45, 50, 80, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(45,50,80,0.25);
 }
 
 /* --- BUTTON --- */
@@ -78,7 +78,6 @@ table thead {
 table th, table td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
-    text-align: left;
 }
 
 table tbody tr:nth-child(even) {
