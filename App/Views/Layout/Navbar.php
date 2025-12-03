@@ -10,7 +10,7 @@
 
     <!-- Brand -->
     <a class="navbar-brand d-flex align-items-center" href="<?= $base_url ?>/">
-    <img src="/gambar/logo.png" height="32" class="me-2">
+    <img src="/gambar/logo.png" height="48" class="me-2">
     <span>Buku Tamu</span>
     </a>
 
