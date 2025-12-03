@@ -24,7 +24,7 @@ body {
 
 /* LEFT SECTION (IMAGE) */
 .left-art {
-    flex: 1.1;
+    flex: 1.5;
     background-image: url('../gambar/login.jpeg');
     background-size: cover;
     background-position: center;
@@ -44,7 +44,7 @@ body {
 
 /* RIGHT SECTION (FORM) */
 .right-login {
-    flex: 1;
+    flex: 1.5;
     padding: 60px 50px;
 }
 
