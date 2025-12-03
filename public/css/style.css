@@ -9,10 +9,8 @@ body {
     background-size: cover; 
     background-position: center center;
     background-attachment: fixed; /* Membuat gambar diam saat scroll */
-    
     /* Fallback warna solid jika gambar gagal dimuat */
     background-color: #f5f6fa; 
-    
     margin: 0;
     padding: 0;
 }
@@ -126,4 +124,19 @@ table tbody tr:last-child td {
     background: #ffe5e5 !important; 
     color: #f11010 !important; 
     border: 1px solid #f11010;
+}
+
+.navbar-brand span {
+    font-size: 3.5rem !important; /* Nilai yang sangat besar */
+    font-weight: 700 !important;
+}
+.navbar-brand img {
+    height: 80px !important; /* Nilai besar, setara dengan tinggi 64px */
+    width: auto !important;
+    margin-right: 15px !important;
+}
+
+.navbar {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
 }
