@@ -43,11 +43,6 @@
             </ul>
           </li>
 
-          <!-- Laporan -->
-          <li class="nav-item">
-            <a class="nav-link <?= active('/admin/laporan') ?>" href="<?= $base_url ?>/index.php?url=admin/laporan">Laporan</a>
-          </li>
-
         <?php endif; ?>
       </ul>
 
