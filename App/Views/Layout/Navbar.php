@@ -10,10 +10,9 @@
 
     <!-- Brand -->
    <a class="navbar-brand d-flex align-items-center" href="<?= $base_url ?>/">
-    <img src="/public/gambar/logo.png" class="logo-navbar me-2">
-    <span class="fw-bold">Buku Tamu</span>
+    <img src="/gambar/logo.png" height="32" class="me-2">
+    <span>Buku Tamu</span>
     </a>
-
 
     <!-- Button menu mobile -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
