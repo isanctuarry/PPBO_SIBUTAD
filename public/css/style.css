@@ -16,7 +16,7 @@ body {
 
 .left-art {
     flex: 1; /* Mengambil setengah lebar */
-    background-image: url('../../public/gambar/login.jpeg'); /* GANTI DENGAN NAMA FILE GAMBAR ANDA */
+    background-image: url('../gambar/login.jpeg'); /* GANTI DENGAN NAMA FILE GAMBAR ANDA */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -24,6 +24,7 @@ body {
     display: flex;
     align-items: flex-end; /* Posisikan WELCOME ke bawah */
     padding: 30px;
+    min-height: 100vh;
     color: white; /* Warna teks Welcome */
 }
 
