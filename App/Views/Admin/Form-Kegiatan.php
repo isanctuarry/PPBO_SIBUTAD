@@ -1,26 +1,24 @@
 <?php require __DIR__ . '/../Layout/Header.php'; ?>
-<div style="margin-bottom: 15px;">
+
+<div class="mb-3">
     <button 
         onclick="history.back()" 
-        class="btn btn-sm btn-outline-secondary" 
+        class="btn btn-sm btn-outline-primary" 
         title="Kembali ke halaman sebelumnya">
-        
-        &larr; Kembali 
-        
-        </button>
+        &larr; Kembali
+    </button>
 </div>
+
 <div class="row justify-content-center mt-4">
     <div class="col-md-6">
-        
         <div class="card shadow-sm">
-            <a href="<?= $base_url ?>/index.php?url=kegiatan/edit&id=<?= $k['id_kegiatan']; ?>" class="btn btn-sm btn-secondary">
-            Edit Kegiatan
-            </a>
-        </div>
+            <div class="card-header bg-dark text-white text-center fw-bold">
+                Edit Kegiatan
+            </div>
 
             <div class="card-body">
                 <form action="<?= $base_url ?>/index.php?url=kegiatan/update" method="POST">
-
+                    
                     <input type="hidden" name="id_kegiatan" value="<?= $kegiatan['id_kegiatan']; ?>">
 
                     <div class="mb-3">
@@ -50,7 +48,8 @@
                     </div>
 
                     <div class="d-flex justify-content-between mt-4">
-                        <a href="<?= $base_url ?>/index.php?url=kegiatan" class="btn btn-secondary">
+                        <!-- Tombol kembali diubah warna sesuai tema -->
+                        <a href="<?= $base_url ?>/index.php?url=kegiatan" class="btn btn-outline-primary">
                             Kembali
                         </a>
 
@@ -60,10 +59,3 @@
                     </div>
 
                 </form>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<?php require __DIR__ . '/../Layout/Footer.php'; ?>
