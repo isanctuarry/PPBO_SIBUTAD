@@ -130,17 +130,14 @@ table tbody tr:last-child td {
     font-size: 3.5rem !important; /* Nilai yang sangat besar */
     font-weight: 700 !important;
 }
-.navbar-brand img {
-    height: 64px !important; /* Nilai besar, setara dengan tinggi 64px */
-    width: auto !important;
-    margin-right: 15px !important;
+
+.logo-navbar {
+    height: 80px;
+    width: auto;
 }
+
 
 .navbar {
     padding-top: 15px !important;
     padding-bottom: 15px !important;
 }
-
- .logo-navbar {
-    height: 50px; /* ubah ukuran sesuai kebutuhan */
-  }
