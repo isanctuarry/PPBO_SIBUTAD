@@ -136,8 +136,11 @@ table tbody tr:last-child td {
     width: auto !important;
 }
 
-
 .navbar {
     padding-top: 15px !important;
     padding-bottom: 15px !important;
+}
+
+.navbar-brand img {
+    height: 80px !important;
 }
