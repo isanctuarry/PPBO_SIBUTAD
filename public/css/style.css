@@ -140,3 +140,7 @@ table tbody tr:last-child td {
     padding-top: 15px !important;
     padding-bottom: 15px !important;
 }
+
+ .logo-navbar {
+    height: 50px; /* ubah ukuran sesuai kebutuhan */
+  }
