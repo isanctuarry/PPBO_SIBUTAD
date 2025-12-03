@@ -131,7 +131,7 @@ table tbody tr:last-child td {
     font-weight: 700 !important;
 }
 .navbar-brand img {
-    height: 80px !important; /* Nilai besar, setara dengan tinggi 64px */
+    height: 120px !important; /* Nilai besar, setara dengan tinggi 64px */
     width: auto !important;
     margin-right: 15px !important;
 }
