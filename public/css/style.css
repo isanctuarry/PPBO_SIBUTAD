@@ -1,36 +1,70 @@
-/* --- GLOBAL STYLES --- */
+/* =========================================================
+   GLOBAL STYLES
+   ========================================================= */
 body {
     font-family: 'Inter', sans-serif;
-    
-    /* BACKGROUND FIX FOR VERCEL */
-    background-image: url('../gambar/login.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-
-    background-color: #f5f6fa;
+    background: #f5f6fa;
     margin: 0;
     padding: 0;
 }
 
-/* --- CARD --- */
-.card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-    margin-bottom: 20px;
+/* =========================================================
+   LOGIN LAYOUT - GAMBAR DI KIRI, FORM DI KANAN
+   ========================================================= */
+.login-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-/* --- FORM ELEMENTS --- */
-input:not([type="checkbox"]):not([type="radio"]), 
-select, 
+/* LEFT SECTION (IMAGE) */
+.left-art {
+    flex: 1.1;
+    background-image: url('../gambar/login.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    color: #fff;
+    display: flex;
+    align-items: flex-start;
+}
+
+.left-art h1 {
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+/* RIGHT SECTION (FORM) */
+.right-login {
+    flex: 1;
+    padding: 60px 50px;
+}
+
+.right-login h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* =========================================================
+   FORM INPUTS
+   ========================================================= */
+input:not([type="checkbox"]):not([type="radio"]),
+select,
 textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border-radius: 8px;
     border: 1px solid #ccc;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     box-sizing: border-box;
     transition: border-color 0.3s;
 }
@@ -38,15 +72,17 @@ textarea {
 input:focus, select:focus, textarea:focus {
     border-color: #2d3250;
     outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(45, 50, 80, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(45, 50, 80, 0.20);
 }
 
-/* --- BUTTON --- */
+/* =========================================================
+   BUTTONS
+   ========================================================= */
 .btn, .btn-primary, button {
     background: #2d3250 !important;
     color: white !important;
     border-color: #2d3250 !important;
-    padding: 10px 15px;
+    padding: 12px 18px;
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s;
@@ -54,10 +90,23 @@ input:focus, select:focus, textarea:focus {
 
 button:hover, .btn:hover {
     background: #464c6d !important;
-    opacity: 1;
 }
 
-/* --- TABLE --- */
+/* =========================================================
+   ALERT
+   ========================================================= */
+.alert {
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    background: #ffe5e5 !important;
+    color: #f11010 !important;
+    border: 1px solid #f11010;
+}
+
+/* =========================================================
+   TABLE (TIDAK DIUBAH)
+   ========================================================= */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -77,7 +126,6 @@ table thead {
 table th, table td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
-    text-align: left;
 }
 
 table tbody tr:nth-child(even) {
@@ -88,12 +136,21 @@ table tbody tr:last-child td {
     border-bottom: none;
 }
 
-/* --- ALERT --- */
-.alert {
-    padding: 12px;
-    border-radius: 6px;
-    margin-bottom: 15px;
-    background: #ffe5e5 !important;
-    color: #f11010 !important;
-    border: 1px solid #f11010;
+/* =========================================================
+   RESPONSIVE MODE
+   ========================================================= */
+@media(max-width: 900px) {
+    .login-wrapper {
+        flex-direction: column;
+        max-width: 95%;
+    }
+
+    .left-art {
+        height: 260px;
+        padding: 20px;
+    }
+
+    .right-login {
+        padding: 40px 25px;
+    }
 }
