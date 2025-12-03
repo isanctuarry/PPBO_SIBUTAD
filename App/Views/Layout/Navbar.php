@@ -32,7 +32,7 @@ function active($path) {
           <a class="btn btn-outline-light btn-sm me-2" href="<?= $base_url ?>index.php?url=admin/dashboard">Dashboard</a>
           <a class="btn btn-light btn-sm" href="<?= $base_url ?>/logout.php">Logout</a>
         <?php else: ?>
-        <a class="btn btn-light btn-sm" href="<?= $base_url ?>index.php?url=/admin/login">Login Admin</a>
+        <a class="btn btn-light btn-sm" href="<?= $base_url ?>index.php?url=/admin/login">Login</a>
         <?php endif; ?>
       </div>
 
