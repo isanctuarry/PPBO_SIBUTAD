@@ -1,20 +1,19 @@
 /* --- GLOBAL STYLES --- */
 body {
     font-family: 'Inter', sans-serif;
-
-    /* BACKGROUND LOGIN FIX */
+    
+    /* BACKGROUND FIX FOR VERCEL */
     background-image: url('../gambar/login.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    background-attachment: fixed;
 
     background-color: #f5f6fa;
     margin: 0;
     padding: 0;
 }
 
-/* CARD */
+/* --- CARD --- */
 .card {
     background: #fff;
     border-radius: 12px;
@@ -23,7 +22,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* FORM INPUT */
+/* --- FORM ELEMENTS --- */
 input:not([type="checkbox"]):not([type="radio"]), 
 select, 
 textarea {
@@ -42,7 +41,7 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 0 0 0.2rem rgba(45, 50, 80, 0.25);
 }
 
-/* BUTTON */
+/* --- BUTTON --- */
 .btn, .btn-primary, button {
     background: #2d3250 !important;
     color: white !important;
@@ -58,7 +57,7 @@ button:hover, .btn:hover {
     opacity: 1;
 }
 
-/* TABLE */
+/* --- TABLE --- */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -78,9 +77,18 @@ table thead {
 table th, table td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
+    text-align: left;
 }
 
-/* ALERT */
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- ALERT --- */
 .alert {
     padding: 12px;
     border-radius: 6px;
