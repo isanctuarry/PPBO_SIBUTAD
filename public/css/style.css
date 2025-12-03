@@ -132,7 +132,7 @@ table tbody tr:last-child td {
 }
 
 .logo-navbar {
-    height: 80px !important;
+    height: 50px !important;
     width: auto !important;
 }
 
@@ -142,5 +142,5 @@ table tbody tr:last-child td {
 }
 
 .navbar-brand img {
-    height: 80px !important;
+    height: 50px !important;
 }
