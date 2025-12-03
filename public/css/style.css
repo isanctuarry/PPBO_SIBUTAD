@@ -13,13 +13,16 @@ body {
    ========================================================= */
 .login-wrapper {
     width: 100%;
-    max-width: 1100px;
-    margin: 40px auto;
+    max-width: 1200px;
+    margin: 60px auto;
     background: #ffffff;
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
     display: flex;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+    /* ⭐ Tinggi ditambah biar tidak "pendek" */
+    min-height: 650px;
 }
 
 /* LEFT SECTION (IMAGE) */
@@ -28,24 +31,35 @@ body {
     background-image: url('../gambar/login.jpeg');
     background-size: cover;
     background-position: center;
-    padding: 40px;
+    background-repeat: no-repeat;
+
+    /* ⭐ Tinggi juga ditambah */
+    min-height: 650px;
+
+    padding: 60px;
     color: #fff;
     display: flex;
     align-items: flex-start;
 }
 
 .left-art h1 {
-    font-size: 38px;
-    font-weight: 700;
+    font-size: 42px;
+    font-weight: 800;
     letter-spacing: 2px;
     margin: 0;
-    text-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    text-shadow: 0 3px 6px rgba(0,0,0,0.4);
 }
 
 /* RIGHT SECTION (FORM) */
 .right-login {
     flex: 1.5;
-    padding: 60px 50px;
+
+    /* ⭐ Tambah padding biar form terlihat tinggi */
+    padding: 100px 70px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .right-login h2 {
@@ -83,7 +97,7 @@ input:focus, select:focus, textarea:focus {
     color: white !important;
     border-color: #2d3250 !important;
     padding: 12px 18px;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background 0.3s;
 }
@@ -143,10 +157,12 @@ table tbody tr:last-child td {
     .login-wrapper {
         flex-direction: column;
         max-width: 95%;
+        min-height: unset;
     }
 
     .left-art {
-        height: 260px;
+        height: 300px;
+        min-height: 300px;
         padding: 20px;
     }
 
