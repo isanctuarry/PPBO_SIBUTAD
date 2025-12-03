@@ -13,11 +13,12 @@
     <div class="col-md-6">
         
         <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
             <a href="<?= $base_url ?>/index.php?url=kegiatan/edit&id=<?= $k['id_kegiatan']; ?>" class="btn btn-sm btn-secondary">
             Edit Kegiatan
             </a>
-
             </div>
+        </div>
 
             <div class="card-body">
                 <form action="<?= $base_url ?>/index.php?url=kegiatan/update" method="POST">
