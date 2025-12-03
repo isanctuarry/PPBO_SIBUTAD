@@ -1,12 +1,15 @@
 <?php require __DIR__ . '/../Layout/Header.php'; ?>
 <link rel="stylesheet" href="<?= $base_url ?>/public/css/style.css?v=<?= time() ?>">
+
 <div class="login-wrapper">
 
-    <div class="left-art">
-        <h1>WELCOME</h1>
-    </div>
+    <!-- BAGIAN KIRI (GAMBAR) -->
+    <div class="left-art"></div>
     
+    <!-- BAGIAN KANAN (FORM LOGIN) -->
     <div class="right-login">
+
+        <h1 class="login-title">WELCOME</h1>
 
         <?php if (isset($_SESSION['flash_message'])): ?>
             <div class="alert alert-warning" role="alert">
@@ -21,7 +24,8 @@
             </div>
         <?php endif; ?>
 
-        <form method="post" action="<?= $base_url ?>/index.php?url=admin/dologin">
+        <form method="post" action="<?= $base_url ?>/index.php?url=admin/dologin" class="login-form">
+
             <div class="mb-3">
                 <label class="form-label">Username</label>
                 <input name="username" class="form-control" required>
@@ -32,7 +36,8 @@
                 <input name="password" type="password" class="form-control" required>
             </div>
 
-            <button class="btn btn-primary">Login</button>
+            <button class="btn btn-primary login-btn">Login</button>
+
         </form>
     </div>
 
