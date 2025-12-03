@@ -9,13 +9,10 @@
   <div class="container">
 
     <!-- Brand -->
-    <a class="navbar-brand d-flex align-items-center fw-bold" href="<?= $base_url ?>/">
-    <img src="<?= rtrim($base_url, '/') ?>/gambar/logo.png?v=2"
-         alt="Logo"
-         style="height:30px; width:auto; margin-right:8px;">
+    <a class="navbar-brand d-flex align-items-center" href="<?= $base_url ?>/">
+    <img src="/gambar/logo.png" height="32" class="me-2">
     <span>Buku Tamu</span>
     </a>
-
 
     <!-- Button menu mobile -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
