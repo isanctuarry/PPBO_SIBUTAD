@@ -20,7 +20,7 @@
             
             <div class="table-responsive">
                 <table class="table table-hover mb-0">
-                    <thead class="table-dark"> 
+                    <thead class="table-dark">
                         <tr>
                             <th scope="col" class="text-muted small">#</th>
                             <th scope="col" class="text-muted small">NAMA</th>
@@ -44,7 +44,6 @@
                                     <td><?= htmlspecialchars($column['email']) ?></td>
                                     
                                     <td class="text-center">
-                                        <td class="text-center">
                                             <!-- EDIT (icon pensil) -->
                                             <a href="/tamu/edit/<?= $column['id'] ?? ($i + 1) ?>" 
                                             class="btn btn-sm btn-primary me-2"
