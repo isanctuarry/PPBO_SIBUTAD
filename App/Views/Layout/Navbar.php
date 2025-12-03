@@ -26,28 +26,6 @@ function active($path) {
 
     <div class="collapse navbar-collapse" id="navbarNav">
 
-      <!-- Menu kiri -->
-      <ul class="navbar-nav me-auto">
-        <?php if(!empty($_SESSION['admin'])): ?>
-          <li class="nav-item">
-            <a class="nav-link <?= active('/admin/dashboard') ?>" href="<?= $base_url ?>/index.php?url=admin/dashboard">Dashboard</a>
-          </li>
-
-          <!-- Dropdown Data -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle <?= 
-              active('/admin/daftar-tamu') || active('/admin/kegiatan') ? 'active' : '' 
-            ?>" href="#" role="button" data-bs-toggle="dropdown">
-              Data
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item <?= active('/admin/daftar-tamu') ?>" href="<?= $base_url ?>/index.php?url=admin/daftar-tamu">Data Tamu</a></li>
-              <li><a class="dropdown-item <?= active('/admin/kegiatan') ?>" href="<?= $base_url ?>/index.php?url=admin/kegiatan">Kegiatan</a></li>
-            </ul>
-          </li>
-        <?php endif; ?>
-      </ul>
-
       <!-- Menu kanan -->
       <div class="d-flex">
         <?php if(!empty($_SESSION['admin'])): ?>
