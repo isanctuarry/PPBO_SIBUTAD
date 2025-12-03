@@ -1,18 +1,80 @@
 
 /* --- GLOBAL STYLES --- */
 body {
-    font-family: 'Inter', sans-serif;
-    
-    /* PENGATURAN GAMBAR LATAR BELAKANG */
-    background-image: url('../../public/gambar/login.jpeg'); 
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-position: center center;
-    background-attachment: fixed; /* Membuat gambar diam saat scroll */
-    /* Fallback warna solid jika gambar gagal dimuat */
     background-color: #f5f6fa; 
     margin: 0;
     padding: 0;
+}
+
+.login-wrapper {
+    display: flex; /* Menggunakan Flexbox untuk tata letak split */
+    min-height: 100vh; /* Memastikan wrapper setinggi viewport */
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.left-art {
+    flex: 1; /* Mengambil setengah lebar */
+    background-image: url('../../public/gambar/login.jpeg'); /* GANTI DENGAN NAMA FILE GAMBAR ANDA */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative; /* Untuk memposisikan teks WELCOME */
+    display: flex;
+    align-items: flex-end; /* Posisikan WELCOME ke bawah */
+    padding: 30px;
+    color: white; /* Warna teks Welcome */
+}
+
+.left-art h1 {
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    margin-bottom: 50px; /* Jarak dari bawah */
+}
+
+
+/* --- Sisi Kanan (Formulir) --- */
+.right-login {
+    flex: 1; /* Mengambil setengah lebar */
+    padding: 50px 80px; /* Padding untuk form */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Posisikan form di tengah vertikal */
+}
+
+.login-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Custom Input Styling agar menyerupai referensi (border bawah saja) */
+.custom-input {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid #ccc; /* Hanya border bawah */
+    margin-bottom: 30px;
+    box-sizing: border-box; 
+    transition: border-color 0.3s;
+}
+
+.custom-input:focus {
+    border-color: #2d3250; 
+    outline: none; 
+    box-shadow: none;
+}
+
+/* Tombol Login */
+.btn-login-custom {
+    width: 100%;
+    padding: 15px;
+    background: #2d3250 !important;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 1.1rem;
 }
 
 /* Card - Container umum */
@@ -144,3 +206,4 @@ table tbody tr:last-child td {
 .navbar-brand img {
     height: 50px !important;
 }
+
