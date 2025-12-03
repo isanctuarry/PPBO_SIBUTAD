@@ -3,10 +3,8 @@
 
 <div class="login-wrapper">
 
-    <!-- BAGIAN KIRI (GAMBAR) -->
     <div class="left-art"></div>
     
-    <!-- BAGIAN KANAN (FORM LOGIN) -->
     <div class="right-login">
 
         <h1 class="login-title">WELCOME</h1>
@@ -24,7 +22,7 @@
             </div>
         <?php endif; ?>
 
-        <form method="post" action="<?= $base_url ?>/index.php?url=admin/dologin" class="login-form">
+        <form method="post" action="<?= $base_url ?>/index.php?url=admin/dologin">
 
             <div class="mb-3">
                 <label class="form-label">Username</label>
@@ -36,8 +34,7 @@
                 <input name="password" type="password" class="form-control" required>
             </div>
 
-            <button class="btn btn-primary login-btn">Login</button>
-
+            <button class="login-btn">Login</button>
         </form>
     </div>
 

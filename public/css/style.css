@@ -9,7 +9,7 @@ body {
 }
 
 /* =========================================================
-   LOGIN LAYOUT - GAMBAR DI KIRI, FORM DI KANAN
+   LOGIN LAYOUT
    ========================================================= */
 .login-wrapper {
     width: 100%;
@@ -20,43 +20,35 @@ body {
     overflow: hidden;
     display: flex;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-
-    /* ⭐ Biar lebih panjang */
-    min-height: 700px;
+    min-height: 650px;
 }
 
-/* =========================================================
-   LEFT SECTION (BACKGROUND IMAGE)
-   ========================================================= */
+/* LEFT IMAGE SECTION */
 .left-art {
-    flex: 1.4;
+    flex: 1.5;
     background-image: url('../gambar/login.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    min-height: 700px;
+    min-height: 650px;
 }
 
-/* =========================================================
-   RIGHT SECTION (FORM)
-   ========================================================= */
+/* RIGHT FORM AREA */
 .right-login {
-    flex: 1.6;
-    padding: 90px 70px;
+    flex: 1.5;
+    padding: 100px 70px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-/* Judul WELCOME dipindah ke form */
-.right-login h1 {
-    font-size: 42px;
+/* TITLE WELCOME - PINDAH KE FORM */
+.login-title {
+    font-size: 40px;
     font-weight: 800;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     text-align: center;
     color: #2d3250;
-    letter-spacing: 1px;
 }
 
 /* =========================================================
@@ -66,10 +58,11 @@ input:not([type="checkbox"]):not([type="radio"]),
 select,
 textarea {
     width: 100%;
-    padding: 13px;
-    border-radius: 10px;
+    padding: 12px;
+    border-radius: 8px;
     border: 1px solid #ccc;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
     transition: border-color 0.3s;
 }
 
@@ -80,26 +73,28 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* =========================================================
-   BUTTONS
+   LOGIN BUTTON ONLY (BUKAN NAVBAR!!)
    ========================================================= */
-.btn, .btn-primary, button {
-    background: #2d3250 !important;
-    color: white !important;
-    border-color: #2d3250 !important;
-
-    /* ⭐ Tombol lebih lebar & di tengah */
+.login-btn {
     width: 60%;
     margin: 20px auto 0 auto;
-    padding: 14px 20px;
-    font-size: 16px;
+    display: block;
+
+    background: #2d3250;
+    color: white;
+    border: none;
+
+    padding: 14px 0;
+    font-size: 17px;
+    font-weight: 600;
 
     border-radius: 12px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: 0.3s;
 }
 
-button:hover, .btn:hover {
-    background: #464c6d !important;
+.login-btn:hover {
+    background: #464c6d;
 }
 
 /* =========================================================
@@ -112,38 +107,6 @@ button:hover, .btn:hover {
     background: #ffe5e5 !important;
     color: #f11010 !important;
     border: 1px solid #f11010;
-}
-
-/* =========================================================
-   TABLE (TIDAK DIUBAH)
-   ========================================================= */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.table-responsive {
-    overflow-x: auto;
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-table thead {
-    background: #2d3250 !important;
-    color: white !important;
-}
-
-table th, table td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-}
-
-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-table tbody tr:last-child td {
-    border-bottom: none;
 }
 
 /* =========================================================
@@ -165,7 +128,7 @@ table tbody tr:last-child td {
         padding: 40px 25px;
     }
 
-    .btn {
-        width: 100%;
+    .login-btn {
+        width: 80%;
     }
 }
