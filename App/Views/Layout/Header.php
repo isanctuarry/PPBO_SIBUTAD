@@ -29,8 +29,7 @@ if (strpos($host, 'localhost') !== false) {
 
     <!-- LOGO DI POJOK KIRI ATAS -->
     <a class="navbar-brand d-flex align-items-center" href="<?= $base_url ?>/index.php">
-        <img src="<?= $base_url ?>/public/gambar/logo.png" 
-             alt="Logo" 
+        <img src="<?= $base_url ?>app/public/gambar/logo.png" 
              style="height:40px; width:auto; margin-right:10px;">
         SIBUTAD
     </a>

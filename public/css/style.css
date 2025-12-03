@@ -3,7 +3,7 @@ body {
     font-family: 'Inter', sans-serif;
     
     /* FIX: Background Image */
-    background-image: url('../gambar/login.jpeg');
+    background-image: url('app/public/gambar/login.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
