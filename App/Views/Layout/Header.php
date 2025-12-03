@@ -19,7 +19,12 @@ if (strpos($host, 'localhost') !== false) {
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
-    <a class="navbar-brand" href="<?= $base_url ?>/index.php">SIBUTAD</a>
+    <a class="navbar-brand d-flex align-items-center" href="<?= $base_url ?>/index.php">
+    <img src="<?= $base_url ?>/public/gambar/logo.png" 
+         alt="Logo" 
+         style="height:30px; width:auto; margin-right:8px;">
+    <span>SIBUTAD</span>
+  </a>
     
     <?php if(isset($_SESSION['admin'])): ?>
       <div class="ms-auto">
