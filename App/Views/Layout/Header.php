@@ -20,7 +20,7 @@ if (strpos($host, 'localhost') !== false) {
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="<?= $base_url ?>/index.php">
-    <img src="<?= $base_url ?>/public/gambar/logo.png" 
+    <img src="<?= $base_url ?>/gambar/logo.png" 
          alt="Logo" 
          style="height:30px; width:auto; margin-right:8px;">
     <span>SIBUTAD</span>
