@@ -132,8 +132,8 @@ table tbody tr:last-child td {
 }
 
 .logo-navbar {
-    height: 80px;
-    width: auto;
+    height: 80px !important;
+    width: auto !important;
 }
 
 
