@@ -9,59 +9,54 @@
         
         </button>
 </div>
-   <div class="card p-3">
+   <div class="card p-3 mb-4">
+    <form method="post" action="index.php?url=tamu/simpan">
+        <div class="mb-2">
+            <label>Nama</label>
+            <input name="nama" class="form-control" required>
+        </div>
+        <div class="mb-2">
+            <label>Tanggal Kunjungan</label>
+            <input type="date" name="tanggal_kunjungan" class="form-control" required>
+        </div>
+        <div class="mb-2">
+            <label>Email (opsional)</label>
+            <input name="email" class="form-control">
+        </div>
+        <button class="btn btn-primary">Simpan</button>
+    </form>
+</div>
+
+<!-- TABEL -->
+<div class="card p-3">
     <h5 class="mb-3">Daftar Tamu</h5>
 
-                <table class="table table-bordered table-striped">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>#</th>
-                            <th>Nama</th>
-                            <th>Tanggal Kunjungan</th>
-                            <th>Email</th>
-                            <th style="width: 140px;">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php if (empty($tamu)): ?>
-                            <tr>
-                                <td colspan="5" class="text-center py-4 text-muted">Belum ada data tamu yang tercatat.</td>
-                            </tr>
-                        <?php else: ?>
-                            <?php foreach ($tamu as $i => $column): ?>
-                                <tr>
-                                    <td><?= $i + 1 ?></td>
-                                    <td><?= htmlspecialchars($column['nama']) ?></td>
-                                    <td><?= htmlspecialchars($column['tanggal_kunjungan']) ?></td>
-                                    <td><?= htmlspecialchars($column['email']) ?></td>
-                                    
-                                    <td class="text-center">
-                                            <!-- EDIT (icon pensil) -->
-                                            <a href="/tamu/edit/<?= $column['id'] ?? ($i + 1) ?>" 
-                                            class="btn btn-sm btn-primary me-2"
-                                            title="Edit">
-                                                <i class="bi bi-pencil-square"></i>
-                                            </a>
-
-                                            <!-- HAPUS (icon trash) -->
-                                            <form action="/tamu/hapus/<?= $column['id'] ?? ($i + 1) ?>" 
-                                                method="POST" 
-                                                class="d-inline">
-                                                <button type="submit" 
-                                                        class="btn btn-sm btn-danger"
-                                                        onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');"
-                                                        title="Hapus">
-                                                    <i class="bi bi-trash"></i>
-                                                </button>
-                                            </form> 
-                                        </td>
-                                     </tr>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                    </tbody>
-                </table>
-            </div>  
-        </div>
-    </div>
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Nama</th>
+                <th>Tanggal Kunjungan</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if(empty($tamu)): ?>
+                <tr>
+                    <td colspan="4" class="text-center">Belum ada data.</td>
+                </tr>
+            <?php else: ?>
+                <?php foreach($tamu as $i => $column): ?>
+                <tr>
+                    <td><?= $i+1 ?></td>
+                    <td><?= htmlspecialchars($column['nama']) ?></td>
+                    <td><?= htmlspecialchars($column['tanggal_kunjungan']) ?></td>
+                    <td><?= htmlspecialchars($column['email'] ?? '-') ?></td>
+                </tr>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </tbody>
+    </table>
 </div>
+
 <?php require __DIR__ . '/../Layout/Footer.php'; ?>
