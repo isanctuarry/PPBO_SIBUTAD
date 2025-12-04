@@ -26,13 +26,13 @@ if (strpos($host, 'localhost') !== false) {
   <!-- LOGO DI NAVBAR -->
   <style>
       .navbar {
-      padding-top: 0px; 
-      padding-bottom: 0px; 
+      padding-top: 0; 
+      padding-bottom: 0; 
       }
       .navbar-logo {
           height: 80px;
           width: 100%;
-          margin-right: 0px;
+          margin-right: 0;
       }
   </style>
 </head>
