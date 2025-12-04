@@ -35,7 +35,7 @@
                     <td><?= htmlspecialchars($column['nama']) ?></td>
                     <td><?= htmlspecialchars($column['tanggal_kunjungan']) ?></td>
                     <td><?= htmlspecialchars($column['email'] ?? '-') ?></td>
-                    <td><?= htmlspecialchars($column['nama_kegiatan']) ?></td>
+                    <td><?= htmlspecialchars($k['nama_kegiatan']) ?></td>
                 </tr>
                 <?php endforeach; ?>
             <?php endif; ?>
