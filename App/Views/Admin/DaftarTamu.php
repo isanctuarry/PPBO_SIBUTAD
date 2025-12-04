@@ -18,7 +18,6 @@
             <tr>
                 <th>#</th>
                 <th>Nama</th>
-                <th>Kegiatan</th>
                 <th>Tanggal Kunjungan</th>
                 <th>Email</th>
             </tr>
@@ -35,7 +34,6 @@
                     <td><?= htmlspecialchars($column['nama']) ?></td>
                     <td><?= htmlspecialchars($column['tanggal_kunjungan']) ?></td>
                     <td><?= htmlspecialchars($column['email'] ?? '-') ?></td>
-                    <td><?= htmlspecialchars($k['nama_kegiatan']) ?></td>
                 </tr>
                 <?php endforeach; ?>
             <?php endif; ?>
