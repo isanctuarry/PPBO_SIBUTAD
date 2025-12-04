@@ -15,21 +15,19 @@
         <h2 class="text-secondary fw-light">Daftar Tamu</h2>
     </div>
 
-    <div class="card shadow-sm border-0">
-        <div class="card-body p-0">
-            
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
+   <div class="card p-3">
+    <h5 class="mb-3">Daftar Tamu</h5>
+
+                <table class="table table-bordered table-striped">
                     <thead class="table-dark">
                         <tr>
-                            <th scope="col" class="text-muted small">#</th>
-                            <th scope="col" class="text-muted small">NAMA</th>
-                            <th scope="col" class="text-muted small">TANGGAL KUNJUNGAN</th>
-                            <th scope="col" class="text-muted small">EMAIL</th>
-                            <th scope="col" class="text-muted small text-center">AKSI</th> 
+                            <th>#</th>
+                            <th>Nama</th>
+                            <th>Tanggal Kunjungan</th>
+                            <th>Email</th>
+                            <th style="width: 140px;">Aksi</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         <?php if (empty($tamu)): ?>
                             <tr>
