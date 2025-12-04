@@ -9,7 +9,7 @@
     </button>
 </div>
 
-<h4>Rekap Tamu per Kegiatan</h4>
+<h4>Rekap Kunjungan</h4>
 
 <div class="card p-3">
     <table class="table table-bordered table-striped">
