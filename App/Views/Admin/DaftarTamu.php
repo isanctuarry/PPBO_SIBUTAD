@@ -9,12 +9,6 @@
         
         </button>
 </div>
-<div class="container mt-5">
-    
-    <div class="mb-4 border-bottom pb-2">
-        <h2 class="text-secondary fw-light">Daftar Tamu</h2>
-    </div>
-
    <div class="card p-3">
     <h5 class="mb-3">Daftar Tamu</h5>
 
