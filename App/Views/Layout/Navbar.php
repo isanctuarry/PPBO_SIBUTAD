@@ -9,8 +9,6 @@ function active($path) {
     return ($_SERVER['REQUEST_URI'] === $path) ? 'active' : '';
 }
 ?>
-<!-- FONT & STYLE MODERN -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
@@ -34,7 +32,7 @@ function active($path) {
           <a class="btn btn-outline-light btn-sm me-2" href="<?= $base_url ?>index.php?url=admin/dashboard">Dashboard</a>
           <a class="btn btn-light btn-sm" href="<?= $base_url ?>/logout.php">Logout</a>
         <?php else: ?>
-        <a class="btn btn-light btn-sm" href="<?= $base_url ?>index.php?url=/admin/login">Login</a>
+        <a class="btn btn-light btn-sm" href="<?= $base_url ?>index.php?url=/admin/login">Login Admin</a>
         <?php endif; ?>
       </div>
 
