@@ -8,24 +8,6 @@
         &larr; Kembali 
         
         </button>
-</div>
-   <div class="card p-3 mb-4">
-    <form method="post" action="index.php?url=tamu/simpan">
-        <div class="mb-2">
-            <label>Nama</label>
-            <input name="nama" class="form-control" required>
-        </div>
-        <div class="mb-2">
-            <label>Tanggal Kunjungan</label>
-            <input type="date" name="tanggal_kunjungan" class="form-control" required>
-        </div>
-        <div class="mb-2">
-            <label>Email (opsional)</label>
-            <input name="email" class="form-control">
-        </div>
-        <button class="btn btn-primary">Simpan</button>
-    </form>
-</div>
 
 <!-- TABEL -->
 <div class="card p-3">
