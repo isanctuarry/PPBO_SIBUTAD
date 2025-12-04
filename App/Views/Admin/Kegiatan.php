@@ -21,7 +21,7 @@
 
 <!-- FORM INPUT -->
 <div class="card p-3 mb-4">
-    <form method="post" action="index.php?url=kegiatan/simpan">
+    <form method="post" action="simpan.php">
         <div class="mb-2">
             <label>Nama Kegiatan</label>
             <input name="nama_kegiatan" class="form-control" required>
@@ -38,9 +38,14 @@
     </form>
 </div>
 
-<!-- TABEL -->
+<!-- TABEL DAFTAR KEGIATAN -->
 <div class="card p-3">
     <h5 class="mb-3">Daftar Kegiatan</h5>
+
+    <?php
+    $stmt = $pdo->query("SELECT * FROM kegiatan ORDER BY tanggal_kegiatan DESC");
+    $kegiatan = $stmt->fetchAll();
+    ?>
 
     <table class="table table-bordered table-striped">
         <thead class="table-dark">
@@ -66,12 +71,12 @@
                     <td><?= date('d-m-Y', strtotime($k['tanggal_kegiatan'])) ?></td>
                     <td>
                         <a class="btn btn-sm btn-primary"
-                           href="index.php?url=kegiatan/edit/<?= $k['id_kegiatan'] ?>"
+                           href="edit.php?id=<?= $k['id_kegiatan'] ?>"
                            title="Edit">
                            <i class="bi bi-pencil-square"></i>
                         </a>
                         <a class="btn btn-sm btn-danger" 
-                           href="index.php?url=kegiatan/hapus/<?= $k['id_kegiatan'] ?>" 
+                           href="hapus.php?id=<?= $k['id_kegiatan'] ?>" 
                            onclick="return confirm('Yakin ingin menghapus?')"
                            title="Hapus">
                            <i class="bi bi-trash"></i>
@@ -84,13 +89,13 @@
     </table>
 </div>
 
-<!-- Script untuk menghilangkan alert otomatis -->
+<!-- Script alert otomatis hilang -->
 <script>
     const alertBox = document.getElementById('success-alert');
     if(alertBox){
         setTimeout(() => {
             alertBox.style.display = 'none';
-        }, 3000); // 3000ms = 3 detik
+        }, 3000); // 3 detik
     }
 </script>
 
