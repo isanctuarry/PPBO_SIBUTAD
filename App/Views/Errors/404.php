@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
+    <!-- FONT & STYLE MODERN -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <head>
     <meta charset="UTF-8">
     <title>404 - Halaman Tidak Ditemukan</title>

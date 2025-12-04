@@ -1,4 +1,8 @@
 <?php require __DIR__ . '/../Layout/Header.php'; ?>
+
+<!-- FONT & STYLE MODERN -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="<?= $base_url ?>/public/css/style.css?v=<?= time() ?>">
 
 <div class="login-wrapper">

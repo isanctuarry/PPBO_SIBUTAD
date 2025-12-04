@@ -9,6 +9,8 @@ function active($path) {
     return ($_SERVER['REQUEST_URI'] === $path) ? 'active' : '';
 }
 ?>
+<!-- FONT & STYLE MODERN -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
