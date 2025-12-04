@@ -31,7 +31,7 @@ if (strpos($host, 'localhost') !== false) {
       }
       .navbar-logo {
           height: 80px;
-          width: 50%;
+          width: 100%;
           margin-right: 0px;
       }
   </style>
