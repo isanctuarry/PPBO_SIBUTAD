@@ -15,7 +15,7 @@ function active($path) {
 
     <!-- Brand -->
     <a class="navbar-brand d-flex align-items-center" href="<?= $base_url ?>/">
-      <img src="<?= $base_url ?>/gambar/logo1.png" height="30" class="logo-navbar me-2">
+      <img src="<?= $base_url ?>/gambar/logo1.png" height="10px" class="logo-navbar me-2">
       <span>Buku Tamu</span>
     </a>
 
