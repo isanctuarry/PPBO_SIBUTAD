@@ -11,6 +11,14 @@
 
 <h4>Manajemen Kegiatan</h4>
 
+<!-- Pesan sukses otomatis hilang -->
+<?php if(isset($_SESSION['success'])): ?>
+    <div id="success-alert" class="alert alert-success text-center">
+        <?= $_SESSION['success']; ?>
+    </div>
+    <?php unset($_SESSION['success']); ?>
+<?php endif; ?>
+
 <!-- FORM INPUT -->
 <div class="card p-3 mb-4">
     <form method="post" action="index.php?url=kegiatan/simpan">
@@ -57,14 +65,11 @@
                     <td><?= htmlspecialchars($k['lokasi'] ?? '-') ?></td>
                     <td><?= date('d-m-Y', strtotime($k['tanggal_kegiatan'])) ?></td>
                     <td>
-                        <!-- EDIT (icon pensil) -->
                         <a class="btn btn-sm btn-primary"
                            href="index.php?url=kegiatan/edit/<?= $k['id_kegiatan'] ?>"
                            title="Edit">
                            <i class="bi bi-pencil-square"></i>
                         </a>
-
-                        <!-- HAPUS (icon trash) -->
                         <a class="btn btn-sm btn-danger" 
                            href="index.php?url=kegiatan/hapus/<?= $k['id_kegiatan'] ?>" 
                            onclick="return confirm('Yakin ingin menghapus?')"
@@ -78,5 +83,15 @@
         </tbody>
     </table>
 </div>
+
+<!-- Script untuk menghilangkan alert otomatis -->
+<script>
+    const alertBox = document.getElementById('success-alert');
+    if(alertBox){
+        setTimeout(() => {
+            alertBox.style.display = 'none';
+        }, 3000); // 3000ms = 3 detik
+    }
+</script>
 
 <?php require __DIR__ . '/../Layout/Footer.php'; ?>
