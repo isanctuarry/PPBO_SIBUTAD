@@ -30,9 +30,9 @@ if (strpos($host, 'localhost') !== false) {
       padding-bottom: 0px; 
       }
       .navbar-logo {
-          height: 100px;
-          width: auto;
-          margin-right: 5px;
+          height: 80px;
+          width: 50%;
+          margin-right: 0px;
       }
   </style>
 </head>
