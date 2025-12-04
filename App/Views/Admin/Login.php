@@ -1,12 +1,17 @@
 <?php require __DIR__ . '/../Layout/Header.php'; ?>
-<link rel="stylesheet" href="<?= $base_url ?>/public/css/style.css">
+
+<!-- FONT & STYLE MODERN -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="<?= $base_url ?>/public/css/style.css?v=<?= time() ?>">
+
 <div class="login-wrapper">
 
-    <div class="left-art">
-        <h1>WELCOME</h1>
-    </div>
+    <div class="left-art"></div>
     
     <div class="right-login">
+
+        <h1 class="login-title">WELCOME</h1>
 
         <?php if (isset($_SESSION['flash_message'])): ?>
             <div class="alert alert-warning" role="alert">
@@ -22,6 +27,7 @@
         <?php endif; ?>
 
         <form method="post" action="<?= $base_url ?>/index.php?url=admin/dologin">
+
             <div class="mb-3">
                 <label class="form-label">Username</label>
                 <input name="username" class="form-control" required>
@@ -32,7 +38,7 @@
                 <input name="password" type="password" class="form-control" required>
             </div>
 
-            <button class="btn btn-primary">Login</button>
+            <button class="login-btn">Login</button>
         </form>
     </div>
 

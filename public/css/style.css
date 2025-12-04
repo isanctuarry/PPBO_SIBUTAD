@@ -1,129 +1,145 @@
-
-/* --- GLOBAL STYLES --- */
+/* =========================================================
+   GLOBAL STYLES
+   ========================================================= */
 body {
     font-family: 'Inter', sans-serif;
-    
-    /* PENGATURAN GAMBAR LATAR BELAKANG */
-    background-image: url('../../public/gambar/login.jpeg'); 
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-position: center center;
-    background-attachment: fixed; /* Membuat gambar diam saat scroll */
-    
-    /* Fallback warna solid jika gambar gagal dimuat */
-    background-color: #f5f6fa; 
-    
+    background: #f5f6fa;
     margin: 0;
     padding: 0;
 }
 
-/* Card - Container umum */
-
-/* --- CARD / CONTAINER --- */
-
-.card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    /* Shadow yang lebih halus dan modern */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.08); 
-    margin-bottom: 20px;
+/* =========================================================
+   LOGIN LAYOUT
+   ========================================================= */
+.login-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 60px auto;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    min-height: 650px;
 }
 
-/* ===================================================================
-   FORM ELEMENTS
-   =================================================================== */
+/* LEFT IMAGE SECTION */
+.left-art {
+    flex: 1.5;
+    background-image: url('../gambar/login.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 650px;
+}
 
-/* Selector untuk input teks, select, dan textarea */
-input:not([type="checkbox"]):not([type="radio"]), 
-select, 
+/* RIGHT FORM AREA */
+.right-login {
+    flex: 1.5;
+    padding: 100px 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* TITLE WELCOME - FORM */
+.login-title {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #2d3250;
+}
+
+/* =========================================================
+   FORM INPUTS
+   ========================================================= */
+input:not([type="checkbox"]):not([type="radio"]),
+select,
 textarea {
-/* Catatan: Di sini saya menggunakan selector yang lebih spesifik dari HEAD untuk menghindari checkbox/radio,
-   tapi saya juga memasukkan select dan textarea seperti pada versi lainnya.
-   Beberapa versi konflik menggunakan `input, select, textarea`, yang akan memilih semua jenis input. 
-   Versi ini menggabungkan keduanya. */
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border-radius: 8px;
     border: 1px solid #ccc;
-    margin-bottom: 12px;
-    /* Penting: Memastikan padding tidak membuat lebar melebihi 100% */
-    box-sizing: border-box; 
+    margin-bottom: 15px;
+    box-sizing: border-box;
     transition: border-color 0.3s;
 }
 
-/* Efek saat input difokuskan (Mengambil warna fokus dari HEAD: #2d3250) */
 input:focus, select:focus, textarea:focus {
-    border-color: #2d3250; 
-    outline: none; 
-    /* Menambahkan box-shadow dari versi konflik: b006cf45704a31ed6ee3f39895a526979c81f214 */
-    box-shadow: 0 0 0 0.2rem rgba(45, 50, 80, 0.25); 
+    border-color: #2d3250;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(45, 50, 80, 0.20);
 }
 
-/* --- BUTTON --- */
-.btn, .btn-primary, button {
-    background: #2d3250 !important;
-    color: white !important; 
-    border-color: #2d3250 !important; 
-    padding: 10px 15px;
-    border-radius: 8px;
+.btn-primary {
+    background-color: #2d3250;
+    border-color: #2d3250;
+    border-radius: 12px;
+}
+
+.btn-primary:hover {
+    background-color: #43486b;
+    border-color: #43486b;
+}
+
+/* =========================================================
+   LOGIN BUTTON ONLY (BUKAN NAVBAR!!)
+   ========================================================= */
+.login-btn {
+    width: 60%;
+    margin: 20px auto 0 auto;
+    display: block;
+
+    background: #2d3250;
+    color: white;
+    border: none;
+
+    padding: 14px 0;
+    font-size: 17px;
+    font-weight: 600;
+
+    border-radius: 12px;
     cursor: pointer;
-    transition: background 0.3s; 
+    transition: 0.3s;
 }
 
-/* SINTAKS YANG SUDAH DIPERBAIKI */
-button:hover, .btn:hover {
-    /* Mengambil warna hover dari HEAD karena terlihat lebih terstruktur */
-    background: #464c6d !important; 
-    opacity: 1; /* Menghapus opasitas jika background sudah diubah */
+.login-btn:hover {
+    background: #464c6d;
 }
 
-/* ===================================================================
-   TABLE STYLES
-   =================================================================== */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-/* Tambahan: Wrapper responsif untuk tabel besar */
-.table-responsive {
-    overflow-x: auto;
-    border-radius: 12px; 
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-table thead, .table thead {
-    background: #2d3250 !important;
-    color: white !important;
-}
-
-table th, table td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-}
-
-/* Efek baris selang-seling (striped) */
-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-/* Menghilangkan border bawah pada baris terakhir */
-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-/* ==================================================================
-   ALERT/WARNING STYLES
-   ================================================================== */
+/* =========================================================
+   ALERT
+   ========================================================= */
 .alert {
     padding: 12px;
     border-radius: 6px;
     margin-bottom: 15px;
-    /* Mengambil style ALERT dari versi konflik: b006cf45704a31ed6ee3f39895a526979c81f214 
-       karena lebih lengkap (background, color, border) */
-    background: #ffe5e5 !important; 
-    color: #f11010 !important; 
+    background: #ffe5e5 !important;
+    color: #f11010 !important;
     border: 1px solid #f11010;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media(max-width: 900px) {
+    .login-wrapper {
+        flex-direction: column;
+        max-width: 95%;
+        min-height: unset;
+    }
+
+    .left-art {
+        height: 280px;
+        min-height: 280px;
+    }
+
+    .right-login {
+        padding: 40px 25px;
+    }
+
+    .login-btn {
+        width: 80%;
+    }
 }

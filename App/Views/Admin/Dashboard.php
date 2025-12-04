@@ -1,8 +1,5 @@
 <?php require __DIR__ . '/../Layout/Header.php'; ?>
 
-<!-- FONT & STYLE MODERN -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
     body, h1, h3, h5 {
         font-family: 'Poppins', sans-serif !important;

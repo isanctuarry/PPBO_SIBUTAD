@@ -3,8 +3,13 @@ namespace App\Controllers;
 
 use App\Core\Controller;
 use App\Models\Admin;
-use App\Core\Auth;
+use App\Core\Auth; 
 use App\Models\ViewData; 
+use Firebase\JWT\JWT;      
+use Firebase\JWT\Key;      
+use Exception;             
+
+
 
 class AdminController extends Controller {
 
@@ -24,9 +29,9 @@ class AdminController extends Controller {
         // 3. Pengecekan Sesi: Panggil HANYA jika bukan halaman Login atau DoLogin
         $url = $_GET['url'] ?? '';
         
-        // Jika URL yang diakses adalah halaman yang dilindungi (bukan login/logout/doLogin), cek sesi.
-        if (!in_array($url, ['admin/login', 'admin/dologin', 'admin/logout'])) {
-            $this->checkAdminSession();
+
+       if (!preg_match('/^admin\/(login|dologin|logout)$/', $url)) {
+    $this->checkAdminSession();
         }
     }
 
@@ -34,16 +39,46 @@ class AdminController extends Controller {
      * Method Pembantu: Memeriksa Sesi Admin dan melakukan Redirect jika gagal.
      */
     protected function checkAdminSession() {
+    $secretKey = 'SIBUTAD_KUNCI_RAHASIA_VERCEL';
+    $jwt = $_COOKIE['auth_token'] ?? null;
 
-        // Cek apakah data sesi admin tidak ada
-        if (!isset($_SESSION['admin'])) { 
-            
-            // Set notifikasi flash message 
-            $_SESSION['flash_message'] = 'Sesi Anda telah berakhir. Silakan login kembali.';
-            
-            // Redirect ke halaman login menggunakan $this->base_url yang aman
-            header('Location: ' . $this->base_url . '/index.php?url=admin/login');
-            exit;
+    if (!$jwt) {
+        // Token tidak ada di cookie, redirect ke login
+        $_SESSION['flash_message'] = 'Sesi Anda telah berakhir. Silakan login kembali.';
+        
+        // Pastikan Anda memanggil session_start() di public/index.php
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        
+        header('Location: ' . $this->base_url . '/index.php?url=admin/login');
+        exit;
+    }
+
+    try {
+        // 1. Dekode dan verifikasi Token
+        $decoded = JWT::decode($jwt, new Key($secretKey, 'HS256'));
+        
+        // 2. Jika token valid, Anda bisa memuat data user ke $_SESSION 
+        //    (Opsional, hanya jika masih ada kode yang bergantung pada $_SESSION['admin'])
+        if (!isset($_SESSION['admin'])) {
+            $_SESSION['admin'] = (array) $decoded->data; 
+        }
+
+    } catch (Exception $e) {
+        // 3. Token tidak valid (kedaluwarsa, diubah, atau signature salah)
+        
+        // Hapus cookie yang rusak
+        setcookie("auth_token", "", time() - 3600, '/'); 
+        
+        // Pastikan Anda memanggil session_start() di public/index.php
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        
+        $_SESSION['flash_message'] = 'Sesi tidak valid atau telah kedaluwarsa. Silakan login kembali.';
+        header('Location: ' . $this->base_url . '/index.php?url=admin/login');
+        exit;
         }
     }
 
@@ -63,42 +98,65 @@ class AdminController extends Controller {
     }
 
     public function doLogin() {
-        $username = $_POST['username'] ?? '';
-        $password = $_POST['password'] ?? '';
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
 
-        $user_rahasia = 'admin';
-        $pass_rahasia = 'admin123'; 
+    $user_rahasia = 'admin';
+    $pass_rahasia = 'admin123'; 
 
-        if($username === $user_rahasia && $password === $pass_rahasia) {
-            $adminData = [
+    if($username === $user_rahasia && $password === $pass_rahasia) {
+        $secretKey = 'SIBUTAD_KUNCI_RAHASIA_VERCEL'; // GANTI dengan kunci acak yang kuat!
+        $tokenDuration = 3600 * 24 * 7; // Token berlaku 7 hari (dalam detik)
+
+        $payload = [
+            'iat' => time(), // Issued At (waktu dibuat)
+            'exp' => time() + $tokenDuration, // Expiration (waktu kedaluwarsa)
+            'data' => [
                 'id' => 999,
-                'username' => $user_rahasia,
-                'nama' => 'Administrator'
-            ];
+                'username' => $user_rahasia
+            ]
+        ];
 
-            // Login Sukses
-            Auth::login($adminData);
-            header("Location: " . $this->base_url . "/index.php?url=admin/dashboard");
-            exit;
+        $jwt = JWT::encode($payload, $secretKey, 'HS256');
 
-        } else {
-            // Login Gagal
-            $this->view('Admin/Login', [
-                'title' => 'Login Admin', 
-                'error' => 'Username atau password salah'
-            ]);
+        // Mengirim Token sebagai Cookie HTTP
+        setcookie("auth_token", $jwt, [
+            'expires' => $payload['exp'],
+            'path' => '/',          // Token berlaku di seluruh path domain
+            'httponly' => true,     // Melindungi dari XSS (Wajib!)
+            'secure' => true,       // Wajib di Vercel (HTTPS)
+            'samesite' => 'Strict'  // Wajib untuk keamanan
+        ]);
+        
+        // Hapus sesi lama PHP jika masih ada, untuk transisi
+        if (isset($_SESSION['admin'])) {
+             unset($_SESSION['admin']);
         }
-    }
 
-    public function logout() {
-        Auth::logout();
-        header("Location: " . $this->base_url . "/index.php?url=admin/login");
+        header("Location: " . $this->base_url . "/index.php?url=admin/dashboard");
         exit;
-    }
 
-    /**
-     * Halaman Dashboard Admin (index.php?url=admin/dashboard)
-     */
+    } else {
+        // ... Logika Login Gagal ...
+        $this->view('Admin/Login', ['title' => 'Login Admin', 'error' => 'Username atau password salah']);
+    }
+}
+    public function logout() {
+    // 1. Hapus cookie token dengan mengatur waktu kedaluwarsa di masa lalu
+    setcookie("auth_token", "", time() - 3600, '/'); 
+    
+    // 2. Hapus sesi PHP lama jika masih ada (untuk kebersihan)
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    if (isset($_SESSION['admin'])) {
+        unset($_SESSION['admin']);
+    }
+    
+    header("Location: " . $this->base_url . "/index.php?url=admin/login");
+    exit;
+}
+
     public function dashboard() {
         // Pengecekan sesi sudah dihandle oleh __construct()
         
