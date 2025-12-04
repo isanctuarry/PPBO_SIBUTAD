@@ -25,6 +25,10 @@ if (strpos($host, 'localhost') !== false) {
 
   <!-- LOGO DI NAVBAR -->
   <style>
+      .navbar {
+      padding-top: 10px; 
+      padding-bottom: 10px; 
+      }
       .navbar-logo {
           height: 100px;
           width: auto;
