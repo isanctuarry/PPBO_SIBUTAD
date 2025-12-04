@@ -40,7 +40,7 @@ if (strpos($host, 'localhost') !== false) {
 
     <!-- FIX: LOGO -->
     <a class="navbar-brand d-flex align-items-center" href="<?= $base_url ?>/index.php">
-      <img src="<?= $base_url ?>/gambar/logoo.png" class="navbar-logo">
+      <img src="<?= $base_url ?>/gambar/logo1.png" class="navbar-logo">
       <span class="ms-2">SIBUTAD</span>
     </a>
 
