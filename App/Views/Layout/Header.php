@@ -28,7 +28,7 @@ if (strpos($host, 'localhost') !== false) {
       .navbar-logo {
           height: 100px;
           width: auto;
-          margin-right: 10px;
+          margin-right: 5px;
       }
   </style>
 </head>
